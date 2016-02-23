@@ -76,6 +76,39 @@ dat2010$LC3[dat2010$LC2=="NVG"] <- "NVG"
 dat2010$LC3[dat2010$LCCode=="LVGR" | dat2010$LCCode=="LVSH" | dat2010$LCCode=="LVWG"] <- "NFR"
 dat2010$LC3[dat2010$LC3!="WTR" & dat2010$LC3!="NVG" & dat2010$LC3!="NFR"] <- "FOR"
 
+# Insert new variables for remaining classification levels based on clustering dendrograms
+
+# Level4: mangrove - forest group 1
+# 2007
+dat2007$LC4 <- "OOO"
+dat2007$LC4[dat2007$LCCode=="LVMG"] <- "MGF"
+dat2007$LC4[dat2007$LC3=="WTR"] <- "WTR"
+dat2007$LC4[dat2007$LC3=="NVG"] <- "NVG"
+dat2007$LC4[dat2007$LC3=="NFR"] <- "NFR"
+dat2007$LC4[dat2007$LC4=="OOO"] <- "FG1"
+# 2008
+dat2008$LC4 <- "OOO"
+dat2008$LC4[dat2008$LCCode=="LVMG"] <- "MGF"
+dat2008$LC4[dat2008$LC3=="WTR"] <- "WTR"
+dat2008$LC4[dat2008$LC3=="NVG"] <- "NVG"
+dat2008$LC4[dat2008$LC3=="NFR"] <- "NFR"
+dat2008$LC4[dat2008$LC4=="OOO"] <- "FG1"
+# 2009
+dat2009$LC4 <- "OOO"
+dat2009$LC4[dat2009$LCCode=="LVMG"] <- "MGF"
+dat2009$LC4[dat2009$LC3=="WTR"] <- "WTR"
+dat2009$LC4[dat2009$LC3=="NVG"] <- "NVG"
+dat2009$LC4[dat2009$LC3=="NFR"] <- "NFR"
+dat2009$LC4[dat2009$LC4=="OOO"] <- "FG1"
+# 2010
+dat2010$LC4 <- "OOO"
+dat2010$LC4[dat2010$LCCode=="LVMG"] <- "MGF"
+dat2010$LC4[dat2010$LC3=="WTR"] <- "WTR"
+dat2010$LC4[dat2010$LC3=="NVG"] <- "NVG"
+dat2010$LC4[dat2010$LC3=="NFR"] <- "NFR"
+dat2010$LC4[dat2010$LC4=="OOO"] <- "FG1"
+
+
 # Select observations per classification level and store selected data in variables
 nlz.lc1  <- nlz
 nlz.lc2  <- subset(nlz, subset=(LC1=="Land"))
