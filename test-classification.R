@@ -149,13 +149,42 @@ dat2010$LC5[dat2010$LC5=="OOO"] <- "FG2"
 # Level6
 
 # 2007
-dat2007$LC5 <- "OOO"
-dat2007$LC5[dat2007$LCCode=="FOFC"] <- "OFC"
-dat2007$LC5[dat2007$LC4=="WTR"] <- "WTR"
-dat2007$LC5[dat2007$LC4=="NVG"] <- "NVG"
-dat2007$LC5[dat2007$LC4=="NFR"] <- "NFR"
-dat2007$LC5[dat2007$LC4=="MGF"] <- "MGF"
-dat2007$LC5[dat2007$LC5=="OOO"] <- "FG2"
+dat2007$LC6 <- "OOO"
+dat2007$LC6[dat2007$LC5=="WTR"] <- "WTR"
+dat2007$LC6[dat2007$LC5=="NVG"] <- "NVG"
+dat2007$LC6[dat2007$LC5=="NFR"] <- "NFR"
+dat2007$LC6[dat2007$LC5=="MGF"] <- "MGF"
+dat2007$LC6[dat2007$LC5=="OFC"] <- "OFC"
+dat2007$LC6[dat2007$LCCode=="FCFB" | dat2007$LCCode=="FOFB"] <- "FG3"
+dat2007$LC6[dat2007$LC6=="OOO"] <- "FG4"
+# 2008
+dat2008$LC6 <- "OOO"
+dat2008$LC6[dat2008$LC5=="WTR"] <- "WTR"
+dat2008$LC6[dat2008$LC5=="NVG"] <- "NVG"
+dat2008$LC6[dat2008$LC5=="NFR"] <- "NFR"
+dat2008$LC6[dat2008$LC5=="MGF"] <- "MGF"
+dat2008$LC6[dat2008$LC5=="OFC"] <- "OFC"
+dat2008$LC6[dat2008$LCCode=="FCFB" | dat2008$LCCode=="FOFB" | dat2008$LCCode=="FCFM"] <- "FG4"
+dat2008$LC6[dat2008$LC6=="OOO"] <- "FG3"
+# 2009
+dat2009$LC6 <- "OOO"
+dat2009$LC6[dat2009$LC5=="WTR"] <- "WTR"
+dat2009$LC6[dat2009$LC5=="NVG"] <- "NVG"
+dat2009$LC6[dat2009$LC5=="NFR"] <- "NFR"
+dat2009$LC6[dat2009$LC5=="MGF"] <- "MGF"
+dat2009$LC6[dat2009$LC5=="OFC"] <- "OFC"
+dat2009$LC6[dat2009$LCCode=="FCFB"] <- "CFB"
+dat2009$LC6[dat2009$LC6=="OOO"] <- "FG3"
+# 2010
+dat2010$LC6 <- "OOO"
+dat2010$LC6[dat2010$LC5=="WTR"] <- "WTR"
+dat2010$LC6[dat2010$LC5=="NVG"] <- "NVG"
+dat2010$LC6[dat2010$LC5=="NFR"] <- "NFR"
+dat2010$LC6[dat2010$LC5=="MGF"] <- "MGF"
+dat2010$LC6[dat2010$LC5=="OFC"] <- "OFC"
+dat2010$LC6[dat2010$LCCode=="FCFB" | dat2010$LCCode=="FOFB" | dat2010$LCCode=="FCFM"] <- "FG3"
+dat2010$LC6[dat2010$LC6=="OOO"] <- "FG4"
+
 
 
 # Select observations per classification level and store selected data in variables
