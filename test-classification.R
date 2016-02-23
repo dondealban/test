@@ -108,6 +108,40 @@ dat2010$LC4[dat2010$LC3=="NVG"] <- "NVG"
 dat2010$LC4[dat2010$LC3=="NFR"] <- "NFR"
 dat2010$LC4[dat2010$LC4=="OOO"] <- "FG1"
 
+# Level5: open forest coniferous - forest group 2
+# 2007
+dat2007$LC5 <- "OOO"
+dat2007$LC5[dat2007$LCCode=="FOFC"] <- "OFC"
+dat2007$LC5[dat2007$LC4=="WTR"] <- "WTR"
+dat2007$LC5[dat2007$LC4=="NVG"] <- "NVG"
+dat2007$LC5[dat2007$LC4=="NFR"] <- "NFR"
+dat2007$LC5[dat2007$LC4=="MGF"] <- "MGF"
+dat2007$LC5[dat2007$LC5=="OOO"] <- "FG2"
+# 2008
+dat2008$LC5 <- "OOO"
+dat2008$LC5[dat2008$LCCode=="FOFC"] <- "OFC"
+dat2008$LC5[dat2008$LC4=="WTR"] <- "WTR"
+dat2008$LC5[dat2008$LC4=="NVG"] <- "NVG"
+dat2008$LC5[dat2008$LC4=="NFR"] <- "NFR"
+dat2008$LC5[dat2008$LC4=="MGF"] <- "MGF"
+dat2008$LC5[dat2008$LC5=="OOO"] <- "FG2"
+# 2009
+dat2009$LC5 <- "OOO"
+dat2009$LC5[dat2009$LCCode=="FOFC"] <- "OFC"
+dat2009$LC5[dat2009$LC4=="WTR"] <- "WTR"
+dat2009$LC5[dat2009$LC4=="NVG"] <- "NVG"
+dat2009$LC5[dat2009$LC4=="NFR"] <- "NFR"
+dat2009$LC5[dat2009$LC4=="MGF"] <- "MGF"
+dat2009$LC5[dat2009$LC5=="OOO"] <- "FG2"
+# 2010
+dat2010$LC5 <- "OOO"
+dat2010$LC5[dat2010$LCCode=="FOFC"] <- "OFC"
+dat2010$LC5[dat2010$LC4=="WTR"] <- "WTR"
+dat2010$LC5[dat2010$LC4=="NVG"] <- "NVG"
+dat2010$LC5[dat2010$LC4=="NFR"] <- "NFR"
+dat2010$LC5[dat2010$LC4=="MGF"] <- "MGF"
+dat2010$LC5[dat2010$LC5=="OOO"] <- "FG2"
+
 
 # Select observations per classification level and store selected data in variables
 nlz.lc1  <- nlz
