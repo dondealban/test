@@ -20,6 +20,8 @@ dat2007 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2007.csv", header=TRU
 #dat2009 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2009.csv", header=TRUE, sep=",")
 #dat2010 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2010.csv", header=TRUE, sep=",")
 
+# CASE 1: Polarisation
+
 # Insert new standard variables for classification levels 1,2,3 for multi-year data
 
 # Level1: land - water
@@ -78,7 +80,8 @@ dat2010$LC3[dat2010$LC3!="WTR" & dat2010$LC3!="NVG" & dat2010$LC3!="NFR"] <- "FO
 
 # Insert new variables for remaining classification levels based on clustering dendrograms
 
-# Level4: mangrove - forest group 1
+# Level4
+
 # 2007
 dat2007$LC4 <- "OOO"
 dat2007$LC4[dat2007$LCCode=="LVMG"] <- "MGF"
@@ -108,7 +111,8 @@ dat2010$LC4[dat2010$LC3=="NVG"] <- "NVG"
 dat2010$LC4[dat2010$LC3=="NFR"] <- "NFR"
 dat2010$LC4[dat2010$LC4=="OOO"] <- "FG1"
 
-# Level5: open forest coniferous - forest group 2
+# Level5
+
 # 2007
 dat2007$LC5 <- "OOO"
 dat2007$LC5[dat2007$LCCode=="FOFC"] <- "OFC"
@@ -141,6 +145,17 @@ dat2010$LC5[dat2010$LC4=="NVG"] <- "NVG"
 dat2010$LC5[dat2010$LC4=="NFR"] <- "NFR"
 dat2010$LC5[dat2010$LC4=="MGF"] <- "MGF"
 dat2010$LC5[dat2010$LC5=="OOO"] <- "FG2"
+
+# Level6
+
+# 2007
+dat2007$LC5 <- "OOO"
+dat2007$LC5[dat2007$LCCode=="FOFC"] <- "OFC"
+dat2007$LC5[dat2007$LC4=="WTR"] <- "WTR"
+dat2007$LC5[dat2007$LC4=="NVG"] <- "NVG"
+dat2007$LC5[dat2007$LC4=="NFR"] <- "NFR"
+dat2007$LC5[dat2007$LC4=="MGF"] <- "MGF"
+dat2007$LC5[dat2007$LC5=="OOO"] <- "FG2"
 
 
 # Select observations per classification level and store selected data in variables
