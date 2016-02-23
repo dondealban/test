@@ -15,7 +15,10 @@ setwd("/Users/dondealban/Image Processing/Thesis/R/4 tree classification/")
 library(tree)
 
 # Read data, define variables, and store data in variables
-nlz <- read.csv(file="test9-scale10-classification.csv", header=TRUE, sep=",")
+dat2007 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2007.csv", header=TRUE, sep=",")
+dat2008 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2008.csv", header=TRUE, sep=",")
+dat2009 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2009.csv", header=TRUE, sep=",")
+dat2010 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2010.csv", header=TRUE, sep=",")
 
 # Select observations per classification level and store selected data in variables
 nlz.lc1  <- nlz
