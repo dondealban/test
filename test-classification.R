@@ -20,13 +20,22 @@ dat2007 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2007.csv", header=TRU
 #dat2009 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2009.csv", header=TRUE, sep=",")
 #dat2010 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2010.csv", header=TRUE, sep=",")
 
-# Insert new variables for classification levels based on clustering dendrograms
-
-# 2007
+# Insert new standard variables for classification levels 1,2,3 for multi-year data
 
 # Level1: land - water
+# 2007
 dat2007$LC1[dat2007$LCCode=="WNOW" | dat2007$LCCode=="WNRB" | dat2007$LCCode=="WNSS"] <- "WTR"
 dat2007$LC1[dat2007$LCCode!="WNOW" & dat2007$LCCode!="WNRB" & dat2007$LCCode!="WNSS"] <- "LND"
+# 2008
+dat2008$LC1[dat2008$LCCode=="WNOW" | dat2008$LCCode=="WNRB" | dat2008$LCCode=="WNSS"] <- "WTR"
+dat2008$LC1[dat2008$LCCode!="WNOW" & dat2008$LCCode!="WNRB" & dat2008$LCCode!="WNSS"] <- "LND"
+# 2009
+dat2009$LC1[dat2009$LCCode=="WNOW" | dat2009$LCCode=="WNRB" | dat2009$LCCode=="WNSS"] <- "WTR"
+dat2009$LC1[dat2009$LCCode!="WNOW" & dat2009$LCCode!="WNRB" & dat2009$LCCode!="WNSS"] <- "LND"
+# 2010
+dat2010$LC1[dat2010$LCCode=="WNOW" | dat2010$LCCode=="WNRB" | dat2010$LCCode=="WNSS"] <- "WTR"
+dat2010$LC1[dat2010$LCCode!="WNOW" & dat2010$LCCode!="WNRB" & dat2010$LCCode!="WNSS"] <- "LND"
+
 
 # Level2: vegetation - non-vegetation
 dat2007$LC2[dat2007$LCCode=="WNOW" | dat2007$LCCode=="WNRB" | dat2007$LCCode=="WNSS"] <- "WTR"
