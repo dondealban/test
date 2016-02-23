@@ -33,6 +33,11 @@ dat2007$LC2[dat2007$LCCode=="WNOW" | dat2007$LCCode=="WNRB" | dat2007$LCCode=="W
 dat2007$LC2[dat2007$LCCode!="WNOW" & dat2007$LCCode!="WNRB" & dat2007$LCCode!="WNSS" & dat2007$LCCode=="LNBU"] <- "NVG"
 dat2007$LC2[dat2007$LCCode!="WNOW" & dat2007$LCCode!="WNRB" & dat2007$LCCode!="WNSS" & dat2007$LCCode!="LNBU"] <- "VEG"
 
+# Level3: forest - non-forest
+dat2007$LC3[dat2007$LCCode=="WNOW" | dat2007$LCCode=="WNRB" | dat2007$LCCode=="WNSS"] <- "WTR"
+dat2007$LC3[dat2007$LCCode!="WNOW" & dat2007$LCCode!="WNRB" & dat2007$LCCode!="WNSS" & dat2007$LCCode=="LNBU" & dat2007$LCCode=="LVGR" & dat2007$LCCode=="LVSH" & dat2007$LCCode=="LVWG"] <- "NFR"
+dat2007$LC3[dat2007$LCCode!="WNOW" & dat2007$LCCode!="WNRB" & dat2007$LCCode!="WNSS" & dat2007$LCCode!="LNBU" & dat2007$LCCode!="LVGR" & dat2007$LCCode!="LVSH" & dat2007$LCCode!="LVWG"] <- "FOR"
+
 
 # Select observations per classification level and store selected data in variables
 nlz.lc1  <- nlz
