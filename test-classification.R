@@ -80,7 +80,7 @@ dat2010$LC3[dat2010$LC3!="WTR" & dat2010$LC3!="NVG" & dat2010$LC3!="NFR"] <- "FO
 
 # Insert new variables for remaining classification levels based on clustering dendrograms
 
-# Level4
+# Level4: Node 8 Split
 
 # 2007
 dat2007$LC4 <- "OOO"
@@ -111,7 +111,7 @@ dat2010$LC4[dat2010$LC3=="NVG"] <- "NVG"
 dat2010$LC4[dat2010$LC3=="NFR"] <- "NFR"
 dat2010$LC4[dat2010$LC4=="OOO"] <- "FG1"
 
-# Level5
+# Level5: Node 7 Split
 
 # 2007
 dat2007$LC5 <- "OOO"
@@ -146,7 +146,7 @@ dat2010$LC5[dat2010$LC4=="NFR"] <- "NFR"
 dat2010$LC5[dat2010$LC4=="MGF"] <- "MGF"
 dat2010$LC5[dat2010$LC5=="OOO"] <- "FG2"
 
-# Level6
+# Level6: Node 6 Split
 
 # 2007
 dat2007$LC6 <- "OOO"
@@ -155,8 +155,8 @@ dat2007$LC6[dat2007$LC5=="NVG"] <- "NVG"
 dat2007$LC6[dat2007$LC5=="NFR"] <- "NFR"
 dat2007$LC6[dat2007$LC5=="MGF"] <- "MGF"
 dat2007$LC6[dat2007$LC5=="OFC"] <- "OFC"
-dat2007$LC6[dat2007$LCCode=="FCFB" | dat2007$LCCode=="FOFB"] <- "FG3"
-dat2007$LC6[dat2007$LC6=="OOO"] <- "FG4"
+dat2007$LC6[dat2007$LCCode=="FCFB" | dat2007$LCCode=="FOFB"] <- "FG4"
+dat2007$LC6[dat2007$LC6=="OOO"] <- "FG3"
 # 2008
 dat2008$LC6 <- "OOO"
 dat2008$LC6[dat2008$LC5=="WTR"] <- "WTR"
@@ -164,8 +164,8 @@ dat2008$LC6[dat2008$LC5=="NVG"] <- "NVG"
 dat2008$LC6[dat2008$LC5=="NFR"] <- "NFR"
 dat2008$LC6[dat2008$LC5=="MGF"] <- "MGF"
 dat2008$LC6[dat2008$LC5=="OFC"] <- "OFC"
-dat2008$LC6[dat2008$LCCode=="FCFB" | dat2008$LCCode=="FOFB" | dat2008$LCCode=="FCFM"] <- "FG4"
-dat2008$LC6[dat2008$LC6=="OOO"] <- "FG3"
+dat2008$LC6[dat2008$LCCode=="FCFB" | dat2008$LCCode=="FOFB" | dat2008$LCCode=="FCFM"] <- "FG3"
+dat2008$LC6[dat2008$LC6=="OOO"] <- "FG4"
 # 2009
 dat2009$LC6 <- "OOO"
 dat2009$LC6[dat2009$LC5=="WTR"] <- "WTR"
@@ -182,9 +182,51 @@ dat2010$LC6[dat2010$LC5=="NVG"] <- "NVG"
 dat2010$LC6[dat2010$LC5=="NFR"] <- "NFR"
 dat2010$LC6[dat2010$LC5=="MGF"] <- "MGF"
 dat2010$LC6[dat2010$LC5=="OFC"] <- "OFC"
-dat2010$LC6[dat2010$LCCode=="FCFB" | dat2010$LCCode=="FOFB" | dat2010$LCCode=="FCFM"] <- "FG3"
-dat2010$LC6[dat2010$LC6=="OOO"] <- "FG4"
+dat2010$LC6[dat2010$LCCode=="FCFB" | dat2010$LCCode=="FOFB" | dat2010$LCCode=="FCFM"] <- "FG4"
+dat2010$LC6[dat2010$LC6=="OOO"] <- "FG3"
 
+# Level7: Node 5 Split
+
+# 2007
+dat2007$LC7 <- "OOO"
+dat2007$LC7[dat2007$LC6=="WTR"] <- "WTR"
+dat2007$LC7[dat2007$LC6=="NVG"] <- "NVG"
+dat2007$LC7[dat2007$LC6=="NFR"] <- "NFR"
+dat2007$LC7[dat2007$LC6=="MGF"] <- "MGF"
+dat2007$LC7[dat2007$LC6=="OFC"] <- "OFC"
+dat2007$LC7[dat2007$LC6=="FG4"] <- "FG4"
+dat2007$LC7[dat2007$LCCode=="FCFM" | dat2007$LCCode=="FFFB"] <- "FG6"
+dat2007$LC7[dat2007$LC7=="OOO"] <- "FG5"
+# 2008
+dat2008$LC7 <- "OOO"
+dat2008$LC7[dat2008$LC6=="WTR"] <- "WTR"
+dat2008$LC7[dat2008$LC6=="NVG"] <- "NVG"
+dat2008$LC7[dat2008$LC6=="NFR"] <- "NFR"
+dat2008$LC7[dat2008$LC6=="MGF"] <- "MGF"
+dat2008$LC7[dat2008$LC6=="OFC"] <- "OFC"
+dat2008$LC7[dat2008$LC7=="FG4"] <- "FG4"
+dat2008$LC7[dat2008$LCCode=="FCFB"] <- "CFB"
+dat2008$LC7[dat2008$LCCode=="FOFB" | dat2008$LCCode=="FCFM"] <- "FG5"
+# 2009
+dat2009$LC7 <- "OOO"
+dat2009$LC7[dat2009$LC6=="WTR"] <- "WTR"
+dat2009$LC7[dat2009$LC6=="NVG"] <- "NVG"
+dat2009$LC7[dat2009$LC6=="NFR"] <- "NFR"
+dat2009$LC7[dat2009$LC6=="MGF"] <- "MGF"
+dat2009$LC7[dat2009$LC6=="OFC"] <- "OFC"
+dat2009$LC7[dat2009$LC6=="CFB"] <- "CFB"
+dat2009$LC7[dat2009$LCCode=="FFPC"] <- "FPC"
+dat2009$LC7[dat2009$LC7=="OOO"] <- "FG4"
+# 2010
+dat2010$LC7 <- "OOO"
+dat2010$LC7[dat2010$LC6=="WTR"] <- "WTR"
+dat2010$LC7[dat2010$LC6=="NVG"] <- "NVG"
+dat2010$LC7[dat2010$LC6=="NFR"] <- "NFR"
+dat2010$LC7[dat2010$LC6=="MGF"] <- "MGF"
+dat2010$LC7[dat2010$LC6=="OFC"] <- "OFC"
+dat2010$LC7[dat2010$LC6=="FG4"] <- "FG4"
+dat2010$LC7[dat2010$LCCode=="FFPC"] <- "FPC"
+dat2010$LC7[dat2010$LC7=="OOO"] <- "FG5"
 
 
 # Select observations per classification level and store selected data in variables
