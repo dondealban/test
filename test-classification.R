@@ -16,9 +16,23 @@ library(tree)
 
 # Read data, define variables, and store data in variables
 dat2007 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2007.csv", header=TRUE, sep=",")
-dat2008 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2008.csv", header=TRUE, sep=",")
-dat2009 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2009.csv", header=TRUE, sep=",")
-dat2010 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2010.csv", header=TRUE, sep=",")
+#dat2008 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2008.csv", header=TRUE, sep=",")
+#dat2009 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2009.csv", header=TRUE, sep=",")
+#dat2010 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2010.csv", header=TRUE, sep=",")
+
+# Insert new variables for classification levels based on clustering dendrograms
+
+# 2007
+
+# Level1: land - water
+dat2007$LC1[dat2007$LCCode=="WNOW" | dat2007$LCCode=="WNRB" | dat2007$LCCode=="WNSS"] <- "WTR"
+dat2007$LC1[dat2007$LCCode!="WNOW" & dat2007$LCCode!="WNRB" & dat2007$LCCode!="WNSS"] <- "LND"
+
+# Level2: vegetation - non-vegetation
+dat2007$LC2[dat2007$LCCode=="WNOW" | dat2007$LCCode=="WNRB" | dat2007$LCCode=="WNSS"] <- "WTR"
+dat2007$LC2[dat2007$LCCode!="WNOW" & dat2007$LCCode!="WNRB" & dat2007$LCCode!="WNSS" & dat2007$LCCode=="LNBU"] <- "NVG"
+dat2007$LC2[dat2007$LCCode!="WNOW" & dat2007$LCCode!="WNRB" & dat2007$LCCode!="WNSS" & dat2007$LCCode!="LNBU"] <- "VEG"
+
 
 # Select observations per classification level and store selected data in variables
 nlz.lc1  <- nlz
