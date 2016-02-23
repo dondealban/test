@@ -9,7 +9,7 @@
 
 # Set working directory
 # Note: Need to change the path name as necessary
-setwd("/Users/dondealban/Desktop/Thesis/tree classification/")
+setwd("/Users/dondealban/Image Processing/Thesis/R/4 tree classification/")
 
 # Load the required R libraries
 library(tree)
