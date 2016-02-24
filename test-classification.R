@@ -477,6 +477,24 @@ tree2007.lc9  <- tree(factor(LC9)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + S
 tree2007.lc10 <- tree(factor(LC10) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT, dat2007.lc10)
 tree2007.lc11 <- tree(factor(LC11) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT, dat2007.lc11)
 
+# Perform k-fold cross-validation for each classification level of multi-year data
+
+#2007
+cv2007.lc1  <- cv.tree(tree2007.lc1)
+cv2007.lc2  <- cv.tree(tree2007.lc2)
+cv2007.lc3  <- cv.tree(tree2007.lc3)
+cv2007.lc4  <- cv.tree(tree2007.lc4)
+cv2007.lc5  <- cv.tree(tree2007.lc5)
+cv2007.lc6  <- cv.tree(tree2007.lc6)
+cv2007.lc7  <- cv.tree(tree2007.lc7)
+cv2007.lc8  <- cv.tree(tree2007.lc8)
+cv2007.lc9  <- cv.tree(tree2007.lc9)
+cv2007.lc10 <- cv.tree(tree2007.lc10)
+cv2007.lc11 <- cv.tree(tree2007.lc11)
+
+
+
+
 # Generate tree summary and misclassification statistics and save as TXT file
 
 # 2007
