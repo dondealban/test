@@ -651,8 +651,6 @@ best2010.lc9  <- cv2010.lc9$size[which(cv2010.lc9$dev==min(cv2010.lc9$dev))]
 best2010.lc10 <- cv2010.lc10$size[which(cv2010.lc10$dev==min(cv2010.lc10$dev))]
 best2010.lc11 <- cv2010.lc11$size[which(cv2010.lc11$dev==min(cv2010.lc11$dev))]
 
-
-
 # Prune the tree model using smallest/best deviance from cross-validation results
 # (Note: the number of leafs will be no more than the smallest/best deviance)
 
@@ -668,6 +666,42 @@ prune2007.lc8 <- prune.misclass(tree2007.lc8, best=best2007.lc8)
 prune2007.lc9 <- prune.misclass(tree2007.lc9, best=best2007.lc9)
 prune2007.lc10 <- prune.misclass(tree2007.lc10, best=best2007.lc10)
 prune2007.lc11 <- prune.misclass(tree2007.lc11, best=best2007.lc11)
+# 2008
+prune2008.lc1 <- prune.misclass(tree2008.lc1, best=best2008.lc1)
+prune2008.lc2 <- prune.misclass(tree2008.lc2, best=best2008.lc2)
+prune2008.lc3 <- prune.misclass(tree2008.lc3, best=best2008.lc3)
+prune2008.lc4 <- prune.misclass(tree2008.lc4, best=best2008.lc4)
+prune2008.lc5 <- prune.misclass(tree2008.lc5, best=best2008.lc5)
+prune2008.lc6 <- prune.misclass(tree2008.lc6, best=best2008.lc6)
+prune2008.lc7 <- prune.misclass(tree2008.lc7, best=best2008.lc7)
+prune2008.lc8 <- prune.misclass(tree2008.lc8, best=best2008.lc8)
+prune2008.lc9 <- prune.misclass(tree2008.lc9, best=best2008.lc9)
+prune2008.lc10 <- prune.misclass(tree2008.lc10, best=best2008.lc10)
+prune2008.lc11 <- prune.misclass(tree2008.lc11, best=best2008.lc11)
+# 2009
+prune2009.lc1 <- prune.misclass(tree2009.lc1, best=best2009.lc1)
+prune2009.lc2 <- prune.misclass(tree2009.lc2, best=best2009.lc2)
+prune2009.lc3 <- prune.misclass(tree2009.lc3, best=best2009.lc3)
+prune2009.lc4 <- prune.misclass(tree2009.lc4, best=best2009.lc4)
+prune2009.lc5 <- prune.misclass(tree2009.lc5, best=best2009.lc5)
+prune2009.lc6 <- prune.misclass(tree2009.lc6, best=best2009.lc6)
+prune2009.lc7 <- prune.misclass(tree2009.lc7, best=best2009.lc7)
+prune2009.lc8 <- prune.misclass(tree2009.lc8, best=best2009.lc8)
+prune2009.lc9 <- prune.misclass(tree2009.lc9, best=best2009.lc9)
+prune2009.lc10 <- prune.misclass(tree2009.lc10, best=best2009.lc10)
+prune2009.lc11 <- prune.misclass(tree2009.lc11, best=best2009.lc11)
+# 2010
+prune2010.lc1 <- prune.misclass(tree2010.lc1, best=best2010.lc1)
+prune2010.lc2 <- prune.misclass(tree2010.lc2, best=best2010.lc2)
+prune2010.lc3 <- prune.misclass(tree2010.lc3, best=best2010.lc3)
+prune2010.lc4 <- prune.misclass(tree2010.lc4, best=best2010.lc4)
+prune2010.lc5 <- prune.misclass(tree2010.lc5, best=best2010.lc5)
+prune2010.lc6 <- prune.misclass(tree2010.lc6, best=best2010.lc6)
+prune2010.lc7 <- prune.misclass(tree2010.lc7, best=best2010.lc7)
+prune2010.lc8 <- prune.misclass(tree2010.lc8, best=best2010.lc8)
+prune2010.lc9 <- prune.misclass(tree2010.lc9, best=best2010.lc9)
+prune2010.lc10 <- prune.misclass(tree2010.lc10, best=best2010.lc10)
+prune2010.lc11 <- prune.misclass(tree2010.lc11, best=best2010.lc11)
 
 # Plot cross-validation graph and save as PNG file
 
