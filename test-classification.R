@@ -25,6 +25,7 @@ dat2010 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2010.csv", header=TRU
 # Insert new standard variables for classification levels 1,2,3 for multi-year data
 
 # Level1: land - water
+
 # 2007
 dat2007$LC1[dat2007$LCCode=="WNOW" | dat2007$LCCode=="WNRB" | dat2007$LCCode=="WNSS"] <- "WTR"
 dat2007$LC1[dat2007$LCCode!="WNOW" & dat2007$LCCode!="WNRB" & dat2007$LCCode!="WNSS"] <- "LND"
@@ -39,6 +40,7 @@ dat2010$LC1[dat2010$LCCode=="WNOW" | dat2010$LCCode=="WNRB" | dat2010$LCCode=="W
 dat2010$LC1[dat2010$LCCode!="WNOW" & dat2010$LCCode!="WNRB" & dat2010$LCCode!="WNSS"] <- "LND"
 
 # Level2: vegetation - non-vegetation
+
 # 2007
 dat2007$LC2[dat2007$LC1=="WTR"] <- "WTR"
 dat2007$LC2[dat2007$LC1!="WTR" & dat2007$LCCode=="LNBU"] <- "NVG"
@@ -57,26 +59,31 @@ dat2010$LC2[dat2010$LC1!="WTR" & dat2010$LCCode=="LNBU"] <- "NVG"
 dat2010$LC2[dat2010$LC1!="WTR" & dat2010$LCCode!="LNBU"] <- "VEG"
 
 # Level3: forest - non-forest
+
 # 2007
+dat2007$LC3 <- "OOO"
 dat2007$LC3[dat2007$LC2=="WTR"] <- "WTR"
 dat2007$LC3[dat2007$LC2=="NVG"] <- "NVG"
 dat2007$LC3[dat2007$LCCode=="LVGR" | dat2007$LCCode=="LVSH" | dat2007$LCCode=="LVWG"] <- "NFR"
-dat2007$LC3[dat2007$LC3!="WTR" & dat2007$LC3!="NVG" & dat2007$LC3!="NFR"] <- "FOR"
+dat2007$LC3[dat2007$LC3=="OOO"] <- "FOR"
 # 2008
+dat2008$LC3 <- "OOO"
 dat2008$LC3[dat2008$LC2=="WTR"] <- "WTR"
 dat2008$LC3[dat2008$LC2=="NVG"] <- "NVG"
 dat2008$LC3[dat2008$LCCode=="LVGR" | dat2008$LCCode=="LVSH" | dat2008$LCCode=="LVWG"] <- "NFR"
-dat2008$LC3[dat2008$LC3!="WTR" & dat2008$LC3!="NVG" & dat2008$LC3!="NFR"] <- "FOR"
+dat2008$LC3[dat2008$LC3=="OOO"] <- "FOR"
 # 2009
+dat2009$LC3 <- "OOO"
 dat2009$LC3[dat2009$LC2=="WTR"] <- "WTR"
 dat2009$LC3[dat2009$LC2=="NVG"] <- "NVG"
 dat2009$LC3[dat2009$LCCode=="LVGR" | dat2009$LCCode=="LVSH" | dat2009$LCCode=="LVWG"] <- "NFR"
-dat2009$LC3[dat2009$LC3!="WTR" & dat2009$LC3!="NVG" & dat2009$LC3!="NFR"] <- "FOR"
+dat2009$LC3[dat2009$LC3=="OOO"] <- "FOR"
 # 2010
+dat2010$LC3 <- "OOO"
 dat2010$LC3[dat2010$LC2=="WTR"] <- "WTR"
 dat2010$LC3[dat2010$LC2=="NVG"] <- "NVG"
 dat2010$LC3[dat2010$LCCode=="LVGR" | dat2010$LCCode=="LVSH" | dat2010$LCCode=="LVWG"] <- "NFR"
-dat2010$LC3[dat2010$LC3!="WTR" & dat2010$LC3!="NVG" & dat2010$LC3!="NFR"] <- "FOR"
+dat2010$LC3[dat2010$LC3=="OOO"] <- "FOR"
 
 # Insert new variables for remaining classification levels based on clustering dendrograms
 
