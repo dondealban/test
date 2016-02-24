@@ -202,7 +202,7 @@ dat2007$LC7[dat2007$LC6=="NFR"] <- "NFR"
 dat2007$LC7[dat2007$LC6=="MGF"] <- "MGF"
 dat2007$LC7[dat2007$LC6=="OFC"] <- "OFC"
 dat2007$LC7[dat2007$LC6=="FG3"] <- "FG3"
-dat2007$LC7[dat2007$LCCode=="FCFM" | dat2007$LCCode=="FFFB"] <- "FG1"
+dat2007$LC7[dat2007$LCCode=="FCFM" | dat2007$LCCode=="FFPB"] <- "FG1"
 dat2007$LC7[dat2007$LC7=="OOO"] <- "FG4"
 # 2008
 dat2008$LC7 <- "OOO"
