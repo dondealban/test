@@ -461,6 +461,42 @@ dat2007.lc8  <- subset(dat2007, subset=(LC7=="FG4"))
 dat2007.lc9  <- subset(dat2007, subset=(LC8=="FG3"))
 dat2007.lc10 <- subset(dat2007, subset=(LC9=="FG2"))
 dat2007.lc11 <- subset(dat2007, subset=(LC10=="FG1"))
+# 2008
+dat2008.lc1  <- dat2008
+dat2008.lc2  <- subset(dat2008, subset=(LC1=="LND"))
+dat2008.lc3  <- subset(dat2008, subset=(LC2=="VEG"))
+dat2008.lc4  <- subset(dat2008, subset=(LC3=="FOR"))
+dat2008.lc5  <- subset(dat2008, subset=(LC4=="FG7"))
+dat2008.lc6  <- subset(dat2008, subset=(LC5=="FG6"))
+dat2008.lc7  <- subset(dat2008, subset=(LC6=="FG5"))
+dat2008.lc8  <- subset(dat2008, subset=(LC7=="FG4"))
+dat2008.lc9  <- subset(dat2008, subset=(LC8=="FG3"))
+dat2008.lc10 <- subset(dat2008, subset=(LC9=="FG2"))
+dat2008.lc11 <- subset(dat2008, subset=(LC10=="FG1"))
+# 2009
+dat2009.lc1  <- dat2009
+dat2009.lc2  <- subset(dat2009, subset=(LC1=="LND"))
+dat2009.lc3  <- subset(dat2009, subset=(LC2=="VEG"))
+dat2009.lc4  <- subset(dat2009, subset=(LC3=="FOR"))
+dat2009.lc5  <- subset(dat2009, subset=(LC4=="FG7"))
+dat2009.lc6  <- subset(dat2009, subset=(LC5=="FG6"))
+dat2009.lc7  <- subset(dat2009, subset=(LC6=="FG5"))
+dat2009.lc8  <- subset(dat2009, subset=(LC7=="FG4"))
+dat2009.lc9  <- subset(dat2009, subset=(LC8=="FG3"))
+dat2009.lc10 <- subset(dat2009, subset=(LC9=="FG2"))
+dat2009.lc11 <- subset(dat2009, subset=(LC10=="FG1"))
+# 2010
+dat2010.lc1  <- dat2010
+dat2010.lc2  <- subset(dat2010, subset=(LC1=="LND"))
+dat2010.lc3  <- subset(dat2010, subset=(LC2=="VEG"))
+dat2010.lc4  <- subset(dat2010, subset=(LC3=="FOR"))
+dat2010.lc5  <- subset(dat2010, subset=(LC4=="FG7"))
+dat2010.lc6  <- subset(dat2010, subset=(LC5=="FG6"))
+dat2010.lc7  <- subset(dat2010, subset=(LC6=="FG5"))
+dat2010.lc8  <- subset(dat2010, subset=(LC7=="FG4"))
+dat2010.lc9  <- subset(dat2010, subset=(LC8=="FG3"))
+dat2010.lc10 <- subset(dat2010, subset=(LC9=="FG2"))
+dat2010.lc11 <- subset(dat2010, subset=(LC10=="FG1"))
 
 # Execute tree function using specified classification level and predictor variables
 
@@ -559,7 +595,6 @@ dev.off()
 png("output-2007-cv-lc11.png", width=700, height=500)
 plot(cv.tree(tree2007.lc11))
 dev.off()
-
 
 # Generate tree summary and misclassification statistics (overfitted) and save as TXT file
 
