@@ -42,19 +42,19 @@ dat2010$LC1[dat2010$LCCode!="WNOW" & dat2010$LCCode!="WNRB" & dat2010$LCCode!="W
 # 2007
 dat2007$LC2[dat2007$LC1=="WTR"] <- "WTR"
 dat2007$LC2[dat2007$LC1!="WTR" & dat2007$LCCode=="LNBU"] <- "NVG"
-dat2007$LC2[dat2007$LC1!="WTR" & dat2007$LC2!="NVG"] <- "VEG"
+dat2007$LC2[dat2007$LC1!="WTR" & dat2007$LCCode!="LNBU"] <- "VEG"
 # 2008
 dat2008$LC2[dat2008$LC1=="WTR"] <- "WTR"
 dat2008$LC2[dat2008$LC1!="WTR" & dat2008$LCCode=="LNBU"] <- "NVG"
-dat2008$LC2[dat2008$LC1!="WTR" & dat2008$LC2!="NVG"] <- "VEG"
+dat2008$LC2[dat2008$LC1!="WTR" & dat2008$LCCode!="LNBU"] <- "VEG"
 # 2009
 dat2009$LC2[dat2009$LC1=="WTR"] <- "WTR"
 dat2009$LC2[dat2009$LC1!="WTR" & dat2009$LCCode=="LNBU"] <- "NVG"
-dat2009$LC2[dat2009$LC1!="WTR" & dat2009$LC2!="NVG"] <- "VEG"
+dat2009$LC2[dat2009$LC1!="WTR" & dat2009$LCCode!="LNBU"] <- "VEG"
 # 2010
 dat2010$LC2[dat2010$LC1=="WTR"] <- "WTR"
 dat2010$LC2[dat2010$LC1!="WTR" & dat2010$LCCode=="LNBU"] <- "NVG"
-dat2010$LC2[dat2010$LC1!="WTR" & dat2010$LC2!="NVG"] <- "VEG"
+dat2010$LC2[dat2010$LC1!="WTR" & dat2010$LCCode!="LNBU"] <- "VEG"
 
 # Level3: forest - non-forest
 # 2007
