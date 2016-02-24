@@ -600,8 +600,6 @@ cv2010.lc9  <- cv.tree(tree2010.lc9)
 cv2010.lc10 <- cv.tree(tree2010.lc10)
 cv2010.lc11 <- cv.tree(tree2010.lc11)
 
-
-
 # Extract smallest/best deviance from k-fold cross-validation results of multi-year data
 
 # 2007
@@ -616,6 +614,44 @@ best2007.lc8  <- cv2007.lc8$size[which(cv2007.lc8$dev==min(cv2007.lc8$dev))]
 best2007.lc9  <- cv2007.lc9$size[which(cv2007.lc9$dev==min(cv2007.lc9$dev))]
 best2007.lc10 <- cv2007.lc10$size[which(cv2007.lc10$dev==min(cv2007.lc10$dev))]
 best2007.lc11 <- cv2007.lc11$size[which(cv2007.lc11$dev==min(cv2007.lc11$dev))]
+# 2008
+best2008.lc1  <- cv2008.lc1$size[which(cv2008.lc1$dev==min(cv2008.lc1$dev))]
+best2008.lc2  <- cv2008.lc2$size[which(cv2008.lc2$dev==min(cv2008.lc2$dev))]
+best2008.lc3  <- cv2008.lc3$size[which(cv2008.lc3$dev==min(cv2008.lc3$dev))]
+best2008.lc4  <- cv2008.lc4$size[which(cv2008.lc4$dev==min(cv2008.lc4$dev))]
+best2008.lc5  <- cv2008.lc5$size[which(cv2008.lc5$dev==min(cv2008.lc5$dev))]
+best2008.lc6  <- cv2008.lc6$size[which(cv2008.lc6$dev==min(cv2008.lc6$dev))]
+best2008.lc7  <- cv2008.lc7$size[which(cv2008.lc7$dev==min(cv2008.lc7$dev))]
+best2008.lc8  <- cv2008.lc8$size[which(cv2008.lc8$dev==min(cv2008.lc8$dev))]
+best2008.lc9  <- cv2008.lc9$size[which(cv2008.lc9$dev==min(cv2008.lc9$dev))]
+best2008.lc10 <- cv2008.lc10$size[which(cv2008.lc10$dev==min(cv2008.lc10$dev))]
+best2008.lc11 <- cv2008.lc11$size[which(cv2008.lc11$dev==min(cv2008.lc11$dev))]
+# 2009
+best2009.lc1  <- cv2009.lc1$size[which(cv2009.lc1$dev==min(cv2009.lc1$dev))]
+best2009.lc2  <- cv2009.lc2$size[which(cv2009.lc2$dev==min(cv2009.lc2$dev))]
+best2009.lc3  <- cv2009.lc3$size[which(cv2009.lc3$dev==min(cv2009.lc3$dev))]
+best2009.lc4  <- cv2009.lc4$size[which(cv2009.lc4$dev==min(cv2009.lc4$dev))]
+best2009.lc5  <- cv2009.lc5$size[which(cv2009.lc5$dev==min(cv2009.lc5$dev))]
+best2009.lc6  <- cv2009.lc6$size[which(cv2009.lc6$dev==min(cv2009.lc6$dev))]
+best2009.lc7  <- cv2009.lc7$size[which(cv2009.lc7$dev==min(cv2009.lc7$dev))]
+best2009.lc8  <- cv2009.lc8$size[which(cv2009.lc8$dev==min(cv2009.lc8$dev))]
+best2009.lc9  <- cv2009.lc9$size[which(cv2009.lc9$dev==min(cv2009.lc9$dev))]
+best2009.lc10 <- cv2009.lc10$size[which(cv2009.lc10$dev==min(cv2009.lc10$dev))]
+best2009.lc11 <- cv2009.lc11$size[which(cv2009.lc11$dev==min(cv2009.lc11$dev))]
+# 2010
+best2010.lc1  <- cv2010.lc1$size[which(cv2010.lc1$dev==min(cv2010.lc1$dev))]
+best2010.lc2  <- cv2010.lc2$size[which(cv2010.lc2$dev==min(cv2010.lc2$dev))]
+best2010.lc3  <- cv2010.lc3$size[which(cv2010.lc3$dev==min(cv2010.lc3$dev))]
+best2010.lc4  <- cv2010.lc4$size[which(cv2010.lc4$dev==min(cv2010.lc4$dev))]
+best2010.lc5  <- cv2010.lc5$size[which(cv2010.lc5$dev==min(cv2010.lc5$dev))]
+best2010.lc6  <- cv2010.lc6$size[which(cv2010.lc6$dev==min(cv2010.lc6$dev))]
+best2010.lc7  <- cv2010.lc7$size[which(cv2010.lc7$dev==min(cv2010.lc7$dev))]
+best2010.lc8  <- cv2010.lc8$size[which(cv2010.lc8$dev==min(cv2010.lc8$dev))]
+best2010.lc9  <- cv2010.lc9$size[which(cv2010.lc9$dev==min(cv2010.lc9$dev))]
+best2010.lc10 <- cv2010.lc10$size[which(cv2010.lc10$dev==min(cv2010.lc10$dev))]
+best2010.lc11 <- cv2010.lc11$size[which(cv2010.lc11$dev==min(cv2010.lc11$dev))]
+
+
 
 # Prune the tree model using smallest/best deviance from cross-validation results
 # (Note: the number of leafs will be no more than the smallest/best deviance)
