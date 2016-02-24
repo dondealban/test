@@ -479,7 +479,7 @@ tree2007.lc11 <- tree(factor(LC11) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + S
 
 # Perform k-fold cross-validation for each classification level of multi-year data
 
-#2007
+# 2007
 cv2007.lc1  <- cv.tree(tree2007.lc1)
 cv2007.lc2  <- cv.tree(tree2007.lc2)
 cv2007.lc3  <- cv.tree(tree2007.lc3)
@@ -494,7 +494,7 @@ cv2007.lc11 <- cv.tree(tree2007.lc11)
 
 # Extract smallest/best deviance from k-fold cross-validation results of multi-year data
 
-#2007
+# 2007
 best2007.lc1  <- cv2007.lc1$size[which(cv2007.lc1$dev==min(cv2007.lc1$dev))]
 best2007.lc2  <- cv2007.lc2$size[which(cv2007.lc2$dev==min(cv2007.lc2$dev))]
 best2007.lc3  <- cv2007.lc3$size[which(cv2007.lc3$dev==min(cv2007.lc3$dev))]
@@ -510,7 +510,7 @@ best2007.lc11 <- cv2007.lc11$size[which(cv2007.lc11$dev==min(cv2007.lc11$dev))]
 # Prune the tree model using smallest/best deviance from cross-validation results
 # (Note: the number of leafs will be no more than the smallest/best deviance)
 
-#2007
+# 2007
 prune2007.lc1 <- prune.misclass(tree2007.lc1, best=best2007.lc1)
 prune2007.lc2 <- prune.misclass(tree2007.lc2, best=best2007.lc2)
 prune2007.lc3 <- prune.misclass(tree2007.lc3, best=best2007.lc3)
@@ -522,6 +522,43 @@ prune2007.lc8 <- prune.misclass(tree2007.lc8, best=best2007.lc8)
 prune2007.lc9 <- prune.misclass(tree2007.lc9, best=best2007.lc9)
 prune2007.lc10 <- prune.misclass(tree2007.lc10, best=best2007.lc10)
 prune2007.lc11 <- prune.misclass(tree2007.lc11, best=best2007.lc11)
+
+# Plot cross-validation graph and save as PNG file
+
+# 2007
+png("output-2007-cv-lc1.png", width=700, height=500)
+plot(cv.tree(tree2007.lc1))
+dev.off()
+png("output-2007-cv-lc2.png", width=700, height=500)
+plot(cv.tree(tree2007.lc2))
+dev.off()
+png("output-2007-cv-lc3.png", width=700, height=500)
+plot(cv.tree(tree2007.lc3))
+dev.off()
+png("output-2007-cv-lc4.png", width=700, height=500)
+plot(cv.tree(tree2007.lc4))
+dev.off()
+png("output-2007-cv-lc5.png", width=700, height=500)
+plot(cv.tree(tree2007.lc5))
+dev.off()
+png("output-2007-cv-lc6.png", width=700, height=500)
+plot(cv.tree(tree2007.lc6))
+dev.off()
+png("output-2007-cv-lc7.png", width=700, height=500)
+plot(cv.tree(tree2007.lc7))
+dev.off()
+png("output-2007-cv-lc8.png", width=700, height=500)
+plot(cv.tree(tree2007.lc8))
+dev.off()
+png("output-2007-cv-lc9.png", width=700, height=500)
+plot(cv.tree(tree2007.lc9))
+dev.off()
+png("output-2007-cv-lc10.png", width=700, height=500)
+plot(cv.tree(tree2007.lc10))
+dev.off()
+png("output-2007-cv-lc11.png", width=700, height=500)
+plot(cv.tree(tree2007.lc11))
+dev.off()
 
 
 # Generate tree summary and misclassification statistics (overfitted) and save as TXT file
@@ -738,38 +775,3 @@ plot(prune2007.lc11)
 text(prune2007.lc11, cex=0.70)
 dev.off()
 
-
-# Plot cross-validation graph and save as PNG file
-png("output-2007-cv-lc1.png", width=700, height=500)
-plot(cv.tree(tree2007.lc1))
-dev.off()
-png("output-2007-cv-lc2.png", width=700, height=500)
-plot(cv.tree(tree2007.lc2))
-dev.off()
-png("output-2007-cv-lc3.png", width=700, height=500)
-plot(cv.tree(tree2007.lc3))
-dev.off()
-png("output-2007-cv-lc4.png", width=700, height=500)
-plot(cv.tree(tree2007.lc4))
-dev.off()
-png("output-2007-cv-lc5.png", width=700, height=500)
-plot(cv.tree(tree2007.lc5))
-dev.off()
-png("output-2007-cv-lc6.png", width=700, height=500)
-plot(cv.tree(tree2007.lc6))
-dev.off()
-png("output-2007-cv-lc7.png", width=700, height=500)
-plot(cv.tree(tree2007.lc7))
-dev.off()
-png("output-2007-cv-lc8.png", width=700, height=500)
-plot(cv.tree(tree2007.lc8))
-dev.off()
-png("output-2007-cv-lc9.png", width=700, height=500)
-plot(cv.tree(tree2007.lc9))
-dev.off()
-png("output-2007-cv-lc10.png", width=700, height=500)
-plot(cv.tree(tree2007.lc10))
-dev.off()
-png("output-2007-cv-lc11.png", width=700, height=500)
-plot(cv.tree(tree2007.lc11))
-dev.off()
