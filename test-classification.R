@@ -492,7 +492,36 @@ cv2007.lc9  <- cv.tree(tree2007.lc9)
 cv2007.lc10 <- cv.tree(tree2007.lc10)
 cv2007.lc11 <- cv.tree(tree2007.lc11)
 
+# Extract smallest/best deviance from k-fold cross-validation results of multi-year data
 
+#2007
+best2007.lc1  <- cv2007.lc1$size[which(cv2007.lc1$dev==min(cv2007.lc1$dev))]
+best2007.lc2  <- cv2007.lc2$size[which(cv2007.lc2$dev==min(cv2007.lc2$dev))]
+best2007.lc3  <- cv2007.lc3$size[which(cv2007.lc3$dev==min(cv2007.lc3$dev))]
+best2007.lc4  <- cv2007.lc4$size[which(cv2007.lc4$dev==min(cv2007.lc4$dev))]
+best2007.lc5  <- cv2007.lc5$size[which(cv2007.lc5$dev==min(cv2007.lc5$dev))]
+best2007.lc6  <- cv2007.lc6$size[which(cv2007.lc6$dev==min(cv2007.lc6$dev))]
+best2007.lc7  <- cv2007.lc7$size[which(cv2007.lc7$dev==min(cv2007.lc7$dev))]
+best2007.lc8  <- cv2007.lc8$size[which(cv2007.lc8$dev==min(cv2007.lc8$dev))]
+best2007.lc9  <- cv2007.lc9$size[which(cv2007.lc9$dev==min(cv2007.lc9$dev))]
+best2007.lc10 <- cv2007.lc10$size[which(cv2007.lc10$dev==min(cv2007.lc10$dev))]
+best2007.lc11 <- cv2007.lc11$size[which(cv2007.lc11$dev==min(cv2007.lc11$dev))]
+
+# Prune the tree model using smallest/best deviance from cross-validation results
+# (Note: the number of leafs will be no more than the smallest/best deviance)
+
+#2007
+prune2007.lc1 <- prune.misclass(tree2007.lc1, best=best2007.lc1)
+prune2007.lc2 <- prune.misclass(tree2007.lc2, best=best2007.lc2)
+prune2007.lc3 <- prune.misclass(tree2007.lc3, best=best2007.lc3)
+prune2007.lc4 <- prune.misclass(tree2007.lc4, best=best2007.lc4)
+prune2007.lc5 <- prune.misclass(tree2007.lc5, best=best2007.lc5)
+prune2007.lc6 <- prune.misclass(tree2007.lc6, best=best2007.lc6)
+prune2007.lc7 <- prune.misclass(tree2007.lc7, best=best2007.lc7)
+prune2007.lc8 <- prune.misclass(tree2007.lc8, best=best2007.lc8)
+prune2007.lc9 <- prune.misclass(tree2007.lc9, best=best2007.lc9)
+prune2007.lc10 <- prune.misclass(tree2007.lc10, best=best2007.lc10)
+prune2007.lc11 <- prune.misclass(tree2007.lc11, best=best2007.lc11)
 
 
 # Generate tree summary and misclassification statistics and save as TXT file
