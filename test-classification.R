@@ -230,6 +230,50 @@ dat2010$LC7[dat2010$LC7=="OOO"] <- "FG3"
 
 # Level8: Node 4 Split
 
+# 2007
+dat2007$LC8 <- "OOO"
+dat2007$LC8[dat2007$LC7=="WTR"] <- "WTR"
+dat2007$LC8[dat2007$LC7=="NVG"] <- "NVG"
+dat2007$LC8[dat2007$LC7=="NFR"] <- "NFR"
+dat2007$LC8[dat2007$LC7=="MGF"] <- "MGF"
+dat2007$LC8[dat2007$LC7=="OFC"] <- "OFC"
+dat2007$LC8[dat2007$LC7=="FG3"] <- "FG3"
+dat2007$LC8[dat2007$LC7=="FG1"] <- "FG1"
+dat2007$LC8[dat2007$LCCode=="FOFM"] <- "OFM"
+dat2007$LC8[dat2007$LC8=="OOO"] <- "FG2"
+# 2008
+dat2008$LC8 <- "OOO"
+dat2008$LC8[dat2008$LC7=="WTR"] <- "WTR"
+dat2008$LC8[dat2008$LC7=="NVG"] <- "NVG"
+dat2008$LC8[dat2008$LC7=="NFR"] <- "NFR"
+dat2008$LC8[dat2008$LC7=="MGF"] <- "MGF"
+dat2008$LC8[dat2008$LC7=="OFC"] <- "OFC"
+dat2008$LC8[dat2008$LC7=="CFB"] <- "CFB"
+dat2008$LC8[dat2008$LC7=="FG1"] <- "FG1"
+dat2008$LC8[dat2008$LCCode=="FFPB" | dat2008$LCCode=="FOFM"] <- "FG2"
+dat2008$LC8[dat2008$LC8=="OOO"] <- "FG3"
+# 2009
+dat2009$LC8 <- "OOO"
+dat2009$LC8[dat2009$LC7=="WTR"] <- "WTR"
+dat2009$LC8[dat2009$LC7=="NVG"] <- "NVG"
+dat2009$LC8[dat2009$LC7=="NFR"] <- "NFR"
+dat2009$LC8[dat2009$LC7=="MGF"] <- "MGF"
+dat2009$LC8[dat2009$LC7=="OFC"] <- "OFC"
+dat2009$LC8[dat2009$LC7=="CFB"] <- "CFB"
+dat2009$LC8[dat2009$LC7=="FPC"] <- "FPC"
+dat2009$LC8[dat2009$LCCode=="FCFM" | dat2009$LCCode=="FOFB"] <- "FG1"
+dat2009$LC8[dat2009$LC8=="OOO"] <- "FG3"
+# 2010
+dat2010$LC8 <- "OOO"
+dat2010$LC8[dat2010$LC7=="WTR"] <- "WTR"
+dat2010$LC8[dat2010$LC7=="NVG"] <- "NVG"
+dat2010$LC8[dat2010$LC7=="NFR"] <- "NFR"
+dat2010$LC8[dat2010$LC7=="MGF"] <- "MGF"
+dat2010$LC8[dat2010$LC7=="OFC"] <- "OFC"
+dat2010$LC8[dat2010$LC7=="FPC"] <- "FPC"
+dat2010$LC8[dat2010$LC8=="FG3"] <- "FG3"
+dat2010$LC8[dat2010$LCCode=="FCFB"] <- "CFB"
+dat2010$LC8[dat2010$LC8=="OOO"] <- "FG1"
 
 # Select observations per classification level and store selected data in variables
 nlz.lc1  <- nlz
