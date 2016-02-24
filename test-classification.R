@@ -91,31 +91,31 @@ dat2010$LC3[dat2010$LC3=="OOO"] <- "FOR"
 
 # 2007
 dat2007$LC4 <- "OOO"
-dat2007$LC4[dat2007$LCCode=="LVMG"] <- "MGF"
 dat2007$LC4[dat2007$LC3=="WTR"] <- "WTR"
 dat2007$LC4[dat2007$LC3=="NVG"] <- "NVG"
 dat2007$LC4[dat2007$LC3=="NFR"] <- "NFR"
+dat2007$LC4[dat2007$LCCode=="LVMG"] <- "MGF"
 dat2007$LC4[dat2007$LC4=="OOO"] <- "FG7"
 # 2008
 dat2008$LC4 <- "OOO"
-dat2008$LC4[dat2008$LCCode=="LVMG"] <- "MGF"
 dat2008$LC4[dat2008$LC3=="WTR"] <- "WTR"
 dat2008$LC4[dat2008$LC3=="NVG"] <- "NVG"
 dat2008$LC4[dat2008$LC3=="NFR"] <- "NFR"
+dat2008$LC4[dat2008$LCCode=="LVMG"] <- "MGF"
 dat2008$LC4[dat2008$LC4=="OOO"] <- "FG7"
 # 2009
 dat2009$LC4 <- "OOO"
-dat2009$LC4[dat2009$LCCode=="LVMG"] <- "MGF"
 dat2009$LC4[dat2009$LC3=="WTR"] <- "WTR"
 dat2009$LC4[dat2009$LC3=="NVG"] <- "NVG"
 dat2009$LC4[dat2009$LC3=="NFR"] <- "NFR"
+dat2009$LC4[dat2009$LCCode=="LVMG"] <- "MGF"
 dat2009$LC4[dat2009$LC4=="OOO"] <- "FG7"
 # 2010
 dat2010$LC4 <- "OOO"
-dat2010$LC4[dat2010$LCCode=="LVMG"] <- "MGF"
 dat2010$LC4[dat2010$LC3=="WTR"] <- "WTR"
 dat2010$LC4[dat2010$LC3=="NVG"] <- "NVG"
 dat2010$LC4[dat2010$LC3=="NFR"] <- "NFR"
+dat2010$LC4[dat2010$LCCode=="LVMG"] <- "MGF"
 dat2010$LC4[dat2010$LC4=="OOO"] <- "FG7"
 
 # Level5: Node 7 Split
