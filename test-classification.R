@@ -5,7 +5,7 @@
 #
 # Script By:      Jose Don T. De Alban
 # Date Created:   09 May 2015
-# Last Modified:  23 Feb 2016
+# Last Modified:  25 Feb 2016
 
 # Set working directory
 # Note: Need to change the path name as necessary
@@ -20,7 +20,7 @@ dat2008 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2008.csv", header=TRU
 dat2009 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2009.csv", header=TRUE, sep=",")
 dat2010 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2010.csv", header=TRUE, sep=",")
 
-# CASE 1: Polarisation
+# CASE 2: Polarisation + Topographic
 
 # Insert new standard variables for classification levels 1,2,3 for multi-year data
 
