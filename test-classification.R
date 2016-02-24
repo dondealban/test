@@ -448,30 +448,34 @@ dat2010$LC11[dat2010$LCCode=="FCFM"] <- "CFM"
 dat2010$LC11[dat2010$LCCode=="FOFB"] <- "OFB"
 
 # Select observations per classification level and store selected data in variables
-nlz.lc1  <- nlz
-nlz.lc2  <- subset(nlz, subset=(LC1=="Land"))
-nlz.lc3  <- subset(nlz, subset=(LC2=="Veg"))
-nlz.lc4  <- subset(nlz, subset=(LC3=="Forest"))
-nlz.lc5  <- subset(nlz, subset=(LC4=="FG1"))
-nlz.lc6  <- subset(nlz, subset=(LC5=="FG2"))
-nlz.lc7a <- subset(nlz, subset=(LC6=="FG3"))
-nlz.lc7b <- subset(nlz, subset=(LC6=="FG4"))
-nlz.lc8  <- subset(nlz, subset=(LC7A=="FG5"))
-nlz.lc9  <- subset(nlz, subset=(LC8=="FG6"))
-nlz.lc10 <- subset(nlz, subset=(LC9=="FG7"))
+
+# 2007
+dat2007.lc1  <- dat2007
+dat2007.lc2  <- subset(dat2007, subset=(LC1=="LND"))
+dat2007.lc3  <- subset(dat2007, subset=(LC2=="VEG"))
+dat2007.lc4  <- subset(dat2007, subset=(LC3=="FOR"))
+dat2007.lc5  <- subset(dat2007, subset=(LC4=="FG7"))
+dat2007.lc6  <- subset(dat2007, subset=(LC5=="FG6"))
+dat2007.lc7  <- subset(dat2007, subset=(LC6=="FG5"))
+dat2007.lc8  <- subset(dat2007, subset=(LC7=="FG4"))
+dat2007.lc9  <- subset(dat2007, subset=(LC8=="FG3"))
+dat2007.lc10 <- subset(dat2007, subset=(LC9=="FG2"))
+dat2007.lc11 <- subset(dat2007, subset=(LC10=="FG1"))
 
 # Execute tree function using specified classification level and predictor variables
-tree.nlz.lc1  <- tree(factor(LC1)  ~ Mean.HH + Mean.HV + Mean.RAT + Mean.DEM + Mean.Slope + SD.HH + SD.HV + SD.RAT + SD.DEM + SD.Slope + Area.Pixel + Asymmetry + Brightness + Compactness + EllipticFit + GLCM.AngSecMom + GLCM.Contrast + GLCM.Correlation + GLCM.Dissimilarity + GLCM.Entropy + GLCM.Homogeneity + GLCM.Mean + GLCM.SD + Length.Pixel + LengthWidthRatio + RectangularFit + Roundness + Width.Pixel, nlz.lc1)
-tree.nlz.lc2  <- tree(factor(LC2)  ~ Mean.HH + Mean.HV + Mean.RAT + Mean.DEM + Mean.Slope + SD.HH + SD.HV + SD.RAT + SD.DEM + SD.Slope + Area.Pixel + Asymmetry + Brightness + Compactness + EllipticFit + GLCM.AngSecMom + GLCM.Contrast + GLCM.Correlation + GLCM.Dissimilarity + GLCM.Entropy + GLCM.Homogeneity + GLCM.Mean + GLCM.SD + Length.Pixel + LengthWidthRatio + RectangularFit + Roundness + Width.Pixel, nlz.lc2)
-tree.nlz.lc3  <- tree(factor(LC3)  ~ Mean.HH + Mean.HV + Mean.RAT + Mean.DEM + Mean.Slope + SD.HH + SD.HV + SD.RAT + SD.DEM + SD.Slope + Area.Pixel + Asymmetry + Brightness + Compactness + EllipticFit + GLCM.AngSecMom + GLCM.Contrast + GLCM.Correlation + GLCM.Dissimilarity + GLCM.Entropy + GLCM.Homogeneity + GLCM.Mean + GLCM.SD + Length.Pixel + LengthWidthRatio + RectangularFit + Roundness + Width.Pixel, nlz.lc3)
-tree.nlz.lc4  <- tree(factor(LC4)  ~ Mean.HH + Mean.HV + Mean.RAT + Mean.DEM + Mean.Slope + SD.HH + SD.HV + SD.RAT + SD.DEM + SD.Slope + Area.Pixel + Asymmetry + Brightness + Compactness + EllipticFit + GLCM.AngSecMom + GLCM.Contrast + GLCM.Correlation + GLCM.Dissimilarity + GLCM.Entropy + GLCM.Homogeneity + GLCM.Mean + GLCM.SD + Length.Pixel + LengthWidthRatio + RectangularFit + Roundness + Width.Pixel, nlz.lc4)
-tree.nlz.lc5  <- tree(factor(LC5)  ~ Mean.HH + Mean.HV + Mean.RAT + Mean.DEM + Mean.Slope + SD.HH + SD.HV + SD.RAT + SD.DEM + SD.Slope + Area.Pixel + Asymmetry + Brightness + Compactness + EllipticFit + GLCM.AngSecMom + GLCM.Contrast + GLCM.Correlation + GLCM.Dissimilarity + GLCM.Entropy + GLCM.Homogeneity + GLCM.Mean + GLCM.SD + Length.Pixel + LengthWidthRatio + RectangularFit + Roundness + Width.Pixel, nlz.lc5)
-tree.nlz.lc6  <- tree(factor(LC6)  ~ Mean.HH + Mean.HV + Mean.RAT + Mean.DEM + Mean.Slope + SD.HH + SD.HV + SD.RAT + SD.DEM + SD.Slope + Area.Pixel + Asymmetry + Brightness + Compactness + EllipticFit + GLCM.AngSecMom + GLCM.Contrast + GLCM.Correlation + GLCM.Dissimilarity + GLCM.Entropy + GLCM.Homogeneity + GLCM.Mean + GLCM.SD + Length.Pixel + LengthWidthRatio + RectangularFit + Roundness + Width.Pixel, nlz.lc6)
-tree.nlz.lc7a <- tree(factor(LC7A) ~ Mean.HH + Mean.HV + Mean.RAT + Mean.DEM + Mean.Slope + SD.HH + SD.HV + SD.RAT + SD.DEM + SD.Slope + Area.Pixel + Asymmetry + Brightness + Compactness + EllipticFit + GLCM.AngSecMom + GLCM.Contrast + GLCM.Correlation + GLCM.Dissimilarity + GLCM.Entropy + GLCM.Homogeneity + GLCM.Mean + GLCM.SD + Length.Pixel + LengthWidthRatio + RectangularFit + Roundness + Width.Pixel, nlz.lc7a)
-tree.nlz.lc7b <- tree(factor(LC7B) ~ Mean.HH + Mean.HV + Mean.RAT + Mean.DEM + Mean.Slope + SD.HH + SD.HV + SD.RAT + SD.DEM + SD.Slope + Area.Pixel + Asymmetry + Brightness + Compactness + EllipticFit + GLCM.AngSecMom + GLCM.Contrast + GLCM.Correlation + GLCM.Dissimilarity + GLCM.Entropy + GLCM.Homogeneity + GLCM.Mean + GLCM.SD + Length.Pixel + LengthWidthRatio + RectangularFit + Roundness + Width.Pixel, nlz.lc7b)
-tree.nlz.lc8  <- tree(factor(LC8)  ~ Mean.HH + Mean.HV + Mean.RAT + Mean.DEM + Mean.Slope + SD.HH + SD.HV + SD.RAT + SD.DEM + SD.Slope + Area.Pixel + Asymmetry + Brightness + Compactness + EllipticFit + GLCM.AngSecMom + GLCM.Contrast + GLCM.Correlation + GLCM.Dissimilarity + GLCM.Entropy + GLCM.Homogeneity + GLCM.Mean + GLCM.SD + Length.Pixel + LengthWidthRatio + RectangularFit + Roundness + Width.Pixel, nlz.lc8)
-tree.nlz.lc9  <- tree(factor(LC9)  ~ Mean.HH + Mean.HV + Mean.RAT + Mean.DEM + Mean.Slope + SD.HH + SD.HV + SD.RAT + SD.DEM + SD.Slope + Area.Pixel + Asymmetry + Brightness + Compactness + EllipticFit + GLCM.AngSecMom + GLCM.Contrast + GLCM.Correlation + GLCM.Dissimilarity + GLCM.Entropy + GLCM.Homogeneity + GLCM.Mean + GLCM.SD + Length.Pixel + LengthWidthRatio + RectangularFit + Roundness + Width.Pixel, nlz.lc9)
-tree.nlz.lc10 <- tree(factor(LC10) ~ Mean.HH + Mean.HV + Mean.RAT + Mean.DEM + Mean.Slope + SD.HH + SD.HV + SD.RAT + SD.DEM + SD.Slope + Area.Pixel + Asymmetry + Brightness + Compactness + EllipticFit + GLCM.AngSecMom + GLCM.Contrast + GLCM.Correlation + GLCM.Dissimilarity + GLCM.Entropy + GLCM.Homogeneity + GLCM.Mean + GLCM.SD + Length.Pixel + LengthWidthRatio + RectangularFit + Roundness + Width.Pixel, nlz.lc10)
+
+# 2007
+tree2007.lc1  <- tree(factor(LC1)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT, dat2007.lc1)
+tree2007.lc2  <- tree(factor(LC2)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT, dat2007.lc2)
+tree2007.lc3  <- tree(factor(LC3)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT, dat2007.lc3)
+tree2007.lc4  <- tree(factor(LC4)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT, dat2007.lc4)
+tree2007.lc5  <- tree(factor(LC5)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT, dat2007.lc5)
+tree2007.lc6  <- tree(factor(LC6)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT, dat2007.lc6)
+tree2007.lc7  <- tree(factor(LC7)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT, dat2007.lc7)
+tree2007.lc8  <- tree(factor(LC8)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT, dat2007.lc8)
+tree2007.lc9  <- tree(factor(LC9)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT, dat2007.lc9)
+tree2007.lc10 <- tree(factor(LC10) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT, dat2007.lc10)
+tree2007.lc11 <- tree(factor(LC11) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT, dat2007.lc11)
 
 # Generate tree summary and misclassification statistics and save as TXT file
 sink("output-tree-summary-lc1.txt", append=FALSE, split=TRUE)
