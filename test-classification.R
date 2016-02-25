@@ -20,7 +20,7 @@ dat2008 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2008.csv", header=TRU
 dat2009 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2009.csv", header=TRUE, sep=",")
 dat2010 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2010.csv", header=TRUE, sep=",")
 
-# CASE 5: Polarisation + Topographic + Geometry
+# CASE 6: Polarisation + Topographic + Texture
 
 # Insert new standard variables for classification levels 1,2,3 for multi-year data
 
