@@ -20,7 +20,7 @@ dat2008 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2008.csv", header=TRU
 dat2009 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2009.csv", header=TRUE, sep=",")
 dat2010 <- read.csv(file="PALSARwDEM-NLuzon-Classification-2010.csv", header=TRUE, sep=",")
 
-# CASE 6: Polarisation + Geometry + Texture
+# CASE 8: Polarisation + Topographic + Geometry + Texture
 
 # Insert new standard variables for classification levels 1,2,3 for multi-year data
 
@@ -108,8 +108,8 @@ dat2009$LC4 <- "OOO"
 dat2009$LC4[dat2009$LC3=="WTR"] <- "WTR"
 dat2009$LC4[dat2009$LC3=="NVG"] <- "NVG"
 dat2009$LC4[dat2009$LC3=="NFR"] <- "NFR"
-dat2009$LC4[dat2009$LCCode=="LVMG" | dat2009$LCCode=="FFPC"] <- "FG7"
-dat2009$LC4[dat2009$LC4=="OOO"] <- "FG6"
+dat2009$LC4[dat2009$LCCode=="LVMG"] <- "MGF"
+dat2009$LC4[dat2009$LC4=="OOO"] <- "FG7"
 # 2010
 dat2010$LC4 <- "OOO"
 dat2010$LC4[dat2010$LC3=="WTR"] <- "WTR"
@@ -141,9 +141,9 @@ dat2009$LC5 <- "OOO"
 dat2009$LC5[dat2009$LC4=="WTR"] <- "WTR"
 dat2009$LC5[dat2009$LC4=="NVG"] <- "NVG"
 dat2009$LC5[dat2009$LC4=="NFR"] <- "NFR"
-dat2009$LC5[dat2009$LC4=="FG6"] <- "FG6"
+dat2009$LC5[dat2009$LC4=="MGF"] <- "MGF"
 dat2009$LC5[dat2009$LCCode=="FFPC"] <- "FPC"
-dat2009$LC5[dat2009$LCCode=="LVMG"] <- "MGF"
+dat2009$LC5[dat2009$LC5=="OOO"] <- "FG6"
 # 2010
 dat2010$LC5 <- "OOO"
 dat2010$LC5[dat2010$LC4=="WTR"] <- "WTR"
@@ -180,8 +180,8 @@ dat2009$LC6[dat2009$LC5=="NVG"] <- "NVG"
 dat2009$LC6[dat2009$LC5=="NFR"] <- "NFR"
 dat2009$LC6[dat2009$LC5=="MGF"] <- "MGF"
 dat2009$LC6[dat2009$LC5=="FPC"] <- "FPC"
-dat2009$LC6[dat2009$LCCode=="FOFC"] <- "OFC"
-dat2009$LC6[dat2009$LC6=="OOO"] <- "FG5"
+dat2009$LC6[dat2009$LCCode=="FOFC" | dat2009$LCCode=="FCFC" | dat2009$LCCode=="FCFM"] <- "FG5"
+dat2009$LC6[dat2009$LC6=="OOO"] <- "FG4"
 # 2010
 dat2010$LC6 <- "OOO"
 dat2010$LC6[dat2010$LC5=="WTR"] <- "WTR"
@@ -221,9 +221,9 @@ dat2009$LC7[dat2009$LC6=="NVG"] <- "NVG"
 dat2009$LC7[dat2009$LC6=="NFR"] <- "NFR"
 dat2009$LC7[dat2009$LC6=="MGF"] <- "MGF"
 dat2009$LC7[dat2009$LC6=="FPC"] <- "FPC"
-dat2009$LC7[dat2009$LC6=="OFC"] <- "OFC"
-dat2009$LC7[dat2009$LCCode=="FCFB" | dat2009$LCCode=="FOFB" | dat2009$LCCode=="FOFM"] <- "FG4"
-dat2009$LC7[dat2009$LC7=="OOO"] <- "FG3"
+dat2009$LC7[dat2009$LC6=="FG4"] <- "FG4"
+dat2009$LC7[dat2009$LCCode=="FOFC"] <- "OFC"
+dat2009$LC7[dat2009$LC7=="OOO"] <- "FG2"
 # 2010
 dat2010$LC7 <- "OOO"
 dat2010$LC7[dat2010$LC6=="WTR"] <- "WTR"
@@ -232,7 +232,7 @@ dat2010$LC7[dat2010$LC6=="NFR"] <- "NFR"
 dat2010$LC7[dat2010$LC6=="MGF"] <- "MGF"
 dat2010$LC7[dat2010$LC6=="FPC"] <- "FPC"
 dat2010$LC7[dat2010$LC6=="OFC"] <- "OFC"
-dat2010$LC7[dat2010$LCCode=="FOFB" | dat2010$LCCode=="FCFB"] <- "FG1"
+dat2010$LC7[dat2010$LCCode=="FOFB" | dat2010$LCCode=="FCFB"] <- "FG2"
 dat2010$LC7[dat2010$LC7=="OOO"] <- "FG4"
 
 # Level8: Node 4 Split
@@ -247,7 +247,7 @@ dat2007$LC8[dat2007$LC7=="FPC"] <- "FPC"
 dat2007$LC8[dat2007$LC7=="CFM"] <- "CFM"
 dat2007$LC8[dat2007$LC7=="FG3"] <- "FG3"
 dat2007$LC8[dat2007$LCCode=="FCFC"] <- "CFC"
-dat2007$LC8[dat2007$LC8=="OOO"] <- "FG2"
+dat2007$LC8[dat2007$LC8=="OOO"] <- "FG1"
 # 2008
 dat2008$LC8 <- "OOO"
 dat2008$LC8[dat2008$LC7=="WTR"] <- "WTR"
@@ -267,9 +267,9 @@ dat2009$LC8[dat2009$LC7=="NFR"] <- "NFR"
 dat2009$LC8[dat2009$LC7=="MGF"] <- "MGF"
 dat2009$LC8[dat2009$LC7=="FPC"] <- "FPC"
 dat2009$LC8[dat2009$LC7=="OFC"] <- "OFC"
-dat2009$LC8[dat2009$LC7=="FG3"] <- "FG3"
+dat2009$LC8[dat2009$LC7=="FG2"] <- "FG2"
 dat2009$LC8[dat2009$LCCode=="FCFB"] <- "CFB"
-dat2009$LC8[dat2009$LC8=="OOO"] <- "FG1"
+dat2009$LC8[dat2009$LC8=="OOO"] <- "FG3"
 # 2010
 dat2010$LC8 <- "OOO"
 dat2010$LC8[dat2010$LC7=="WTR"] <- "WTR"
@@ -278,7 +278,7 @@ dat2010$LC8[dat2010$LC7=="NFR"] <- "NFR"
 dat2010$LC8[dat2010$LC7=="MGF"] <- "MGF"
 dat2010$LC8[dat2010$LC7=="FPC"] <- "FPC"
 dat2010$LC8[dat2010$LC7=="OFC"] <- "OFC"
-dat2010$LC8[dat2010$LC7=="FG1"] <- "FG1"
+dat2010$LC8[dat2010$LC7=="FG2"] <- "FG2"
 dat2010$LC8[dat2010$LCCode=="FFPB"] <- "FPB"
 dat2010$LC8[dat2010$LC8=="OOO"] <- "FG3"
 
@@ -293,9 +293,9 @@ dat2007$LC9[dat2007$LC8=="MGF"] <- "MGF"
 dat2007$LC9[dat2007$LC8=="FPC"] <- "FPC"
 dat2007$LC9[dat2007$LC8=="CFM"] <- "CFM"
 dat2007$LC9[dat2007$LC8=="CFC"] <- "CFC"
-dat2007$LC9[dat2007$LC8=="FG2"] <- "FG2"
+dat2007$LC9[dat2007$LC8=="FG1"] <- "FG1"
 dat2007$LC9[dat2007$LCCode=="FCFB"] <- "CFB"
-dat2007$LC9[dat2007$LC9=="OOO"] <- "FG1"
+dat2007$LC9[dat2007$LC9=="OOO"] <- "FG2"
 # 2008
 dat2008$LC9 <- "OOO"
 dat2008$LC9[dat2008$LC8=="WTR"] <- "WTR"
@@ -317,9 +317,9 @@ dat2009$LC9[dat2009$LC8=="MGF"] <- "MGF"
 dat2009$LC9[dat2009$LC8=="FPC"] <- "FPC"
 dat2009$LC9[dat2009$LC8=="OFC"] <- "OFC"
 dat2009$LC9[dat2009$LC8=="CFB"] <- "CFB"
-dat2009$LC9[dat2009$LC8=="FG1"] <- "FG1"
+dat2009$LC9[dat2009$LC8=="FG2"] <- "FG2"
 dat2009$LC9[dat2009$LCCode=="FFPB"] <- "FPB"
-dat2009$LC9[dat2009$LC9=="OOO"] <- "FG2"
+dat2009$LC9[dat2009$LC9=="OOO"] <- "FG1"
 # 2010
 dat2010$LC9 <- "OOO"
 dat2010$LC9[dat2010$LC8=="WTR"] <- "WTR"
@@ -329,9 +329,9 @@ dat2010$LC9[dat2010$LC8=="MGF"] <- "MGF"
 dat2010$LC9[dat2010$LC8=="FPC"] <- "FPC"
 dat2010$LC9[dat2010$LC8=="OFC"] <- "OFC"
 dat2010$LC9[dat2010$LC8=="FPB"] <- "FPB"
-dat2010$LC9[dat2010$LC8=="FG1"] <- "FG1"
+dat2010$LC9[dat2010$LC8=="FG2"] <- "FG2"
 dat2010$LC9[dat2010$LCCode=="FCFC"] <- "CFC"
-dat2010$LC9[dat2010$LC9=="OOO"] <- "FG2"
+dat2010$LC9[dat2010$LC9=="OOO"] <- "FG1"
 
 # Level10: Node 2 Split
 
@@ -346,8 +346,8 @@ dat2007$LC10[dat2007$LC9=="CFM"] <- "CFM"
 dat2007$LC10[dat2007$LC9=="CFC"] <- "CFC"
 dat2007$LC10[dat2007$LC9=="CFB"] <- "CFB"
 dat2007$LC10[dat2007$LC9=="FG1"] <- "FG1"
-dat2007$LC10[dat2007$LCCode=="FOFC"] <- "OFC"
-dat2007$LC10[dat2007$LCCode=="FOFM"] <- "OFM"
+dat2007$LC10[dat2007$LCCode=="FFPB"] <- "FPB"
+dat2007$LC10[dat2007$LCCode=="FOFB"] <- "OFB"
 # 2008
 dat2008$LC10 <- "OOO"
 dat2008$LC10[dat2008$LC9=="WTR"] <- "WTR"
@@ -385,8 +385,8 @@ dat2010$LC10[dat2010$LC9=="OFC"] <- "OFC"
 dat2010$LC10[dat2010$LC9=="FPB"] <- "FPB"
 dat2010$LC10[dat2010$LC9=="CFC"] <- "CFC"
 dat2010$LC10[dat2010$LC9=="FG1"] <- "FG1"
-dat2010$LC10[dat2010$LCCode=="FCFM"] <- "CFM"
-dat2010$LC10[dat2010$LCCode=="FOFM"] <- "OFM"
+dat2010$LC10[dat2010$LCCode=="FCFB"] <- "CFB"
+dat2010$LC10[dat2010$LCCode=="FOFB"] <- "OFB"
 
 # Level11: Node 1 Split
 
@@ -400,10 +400,10 @@ dat2007$LC11[dat2007$LC10=="FPC"] <- "FPC"
 dat2007$LC11[dat2007$LC10=="CFM"] <- "CFM"
 dat2007$LC11[dat2007$LC10=="CFC"] <- "CFC"
 dat2007$LC11[dat2007$LC10=="CFB"] <- "CFB"
-dat2007$LC11[dat2007$LC10=="OFC"] <- "OFC"
-dat2007$LC11[dat2007$LC10=="OFM"] <- "OFM"
-dat2007$LC11[dat2007$LCCode=="FOFB"] <- "OFB"
-dat2007$LC11[dat2007$LCCode=="FFPB"] <- "FPB"
+dat2007$LC11[dat2007$LC10=="OFB"] <- "OFB"
+dat2007$LC11[dat2007$LC10=="FPB"] <- "FPB"
+dat2007$LC11[dat2007$LCCode=="FOFC"] <- "OFC"
+dat2007$LC11[dat2007$LCCode=="FOFM"] <- "OFM"
 # 2008
 dat2008$LC11 <- "OOO"
 dat2008$LC11[dat2008$LC10=="WTR"] <- "WTR"
@@ -442,10 +442,10 @@ dat2010$LC11[dat2010$LC10=="FPC"] <- "FPC"
 dat2010$LC11[dat2010$LC10=="OFC"] <- "OFC"
 dat2010$LC11[dat2010$LC10=="FPB"] <- "FPB"
 dat2010$LC11[dat2010$LC10=="CFC"] <- "CFC"
-dat2010$LC11[dat2010$LC10=="CFM"] <- "CFM"
-dat2010$LC11[dat2010$LC10=="OFM"] <- "OFM"
-dat2010$LC11[dat2010$LCCode=="FCFB"] <- "CFB"
-dat2010$LC11[dat2010$LCCode=="FOFB"] <- "OFB"
+dat2010$LC11[dat2010$LC10=="CFB"] <- "CFB"
+dat2010$LC11[dat2010$LC10=="OFB"] <- "OFB"
+dat2010$LC11[dat2010$LCCode=="FCFM"] <- "CFM"
+dat2010$LC11[dat2010$LCCode=="FOFM"] <- "OFM"
 
 # Select observations per classification level and store selected data in variables
 
@@ -501,53 +501,53 @@ dat2010.lc11 <- subset(dat2010, subset=(LC10=="FG1"))
 # Execute tree function using specified classification level and predictor variables
 
 # 2007
-tree2007.lc1  <- tree(factor(LC1)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc1)
-tree2007.lc2  <- tree(factor(LC2)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc2)
-tree2007.lc3  <- tree(factor(LC3)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc3)
-tree2007.lc4  <- tree(factor(LC4)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc4)
-tree2007.lc5  <- tree(factor(LC5)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc5)
-tree2007.lc6  <- tree(factor(LC6)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc6)
-tree2007.lc7  <- tree(factor(LC7)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc7)
-tree2007.lc8  <- tree(factor(LC8)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc8)
-tree2007.lc9  <- tree(factor(LC9)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc9)
-tree2007.lc10 <- tree(factor(LC10) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc10)
-tree2007.lc11 <- tree(factor(LC11) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc11)
+tree2007.lc1  <- tree(factor(LC1)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc1)
+tree2007.lc2  <- tree(factor(LC2)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc2)
+tree2007.lc3  <- tree(factor(LC3)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc3)
+tree2007.lc4  <- tree(factor(LC4)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc4)
+tree2007.lc5  <- tree(factor(LC5)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc5)
+tree2007.lc6  <- tree(factor(LC6)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc6)
+tree2007.lc7  <- tree(factor(LC7)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc7)
+tree2007.lc8  <- tree(factor(LC8)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc8)
+tree2007.lc9  <- tree(factor(LC9)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc9)
+tree2007.lc10 <- tree(factor(LC10) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc10)
+tree2007.lc11 <- tree(factor(LC11) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2007.lc11)
 # 2008
-tree2008.lc1  <- tree(factor(LC1)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc1)
-tree2008.lc2  <- tree(factor(LC2)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc2)
-tree2008.lc3  <- tree(factor(LC3)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc3)
-tree2008.lc4  <- tree(factor(LC4)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc4)
-tree2008.lc5  <- tree(factor(LC5)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc5)
-tree2008.lc6  <- tree(factor(LC6)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc6)
-tree2008.lc7  <- tree(factor(LC7)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc7)
-tree2008.lc8  <- tree(factor(LC8)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc8)
-tree2008.lc9  <- tree(factor(LC9)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc9)
-tree2008.lc10 <- tree(factor(LC10) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc10)
-tree2008.lc11 <- tree(factor(LC11) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc11)
+tree2008.lc1  <- tree(factor(LC1)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc1)
+tree2008.lc2  <- tree(factor(LC2)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc2)
+tree2008.lc3  <- tree(factor(LC3)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc3)
+tree2008.lc4  <- tree(factor(LC4)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc4)
+tree2008.lc5  <- tree(factor(LC5)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc5)
+tree2008.lc6  <- tree(factor(LC6)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc6)
+tree2008.lc7  <- tree(factor(LC7)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc7)
+tree2008.lc8  <- tree(factor(LC8)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc8)
+tree2008.lc9  <- tree(factor(LC9)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc9)
+tree2008.lc10 <- tree(factor(LC10) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc10)
+tree2008.lc11 <- tree(factor(LC11) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2008.lc11)
 # 2009
-tree2009.lc1  <- tree(factor(LC1)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc1)
-tree2009.lc2  <- tree(factor(LC2)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc2)
-tree2009.lc3  <- tree(factor(LC3)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc3)
-tree2009.lc4  <- tree(factor(LC4)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc4)
-tree2009.lc5  <- tree(factor(LC5)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc5)
-tree2009.lc6  <- tree(factor(LC6)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc6)
-tree2009.lc7  <- tree(factor(LC7)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc7)
-tree2009.lc8  <- tree(factor(LC8)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc8)
-tree2009.lc9  <- tree(factor(LC9)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc9)
-tree2009.lc10 <- tree(factor(LC10) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc10)
-tree2009.lc11 <- tree(factor(LC11) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc11)
+tree2009.lc1  <- tree(factor(LC1)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc1)
+tree2009.lc2  <- tree(factor(LC2)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc2)
+tree2009.lc3  <- tree(factor(LC3)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc3)
+tree2009.lc4  <- tree(factor(LC4)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc4)
+tree2009.lc5  <- tree(factor(LC5)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc5)
+tree2009.lc6  <- tree(factor(LC6)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc6)
+tree2009.lc7  <- tree(factor(LC7)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc7)
+tree2009.lc8  <- tree(factor(LC8)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc8)
+tree2009.lc9  <- tree(factor(LC9)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc9)
+tree2009.lc10 <- tree(factor(LC10) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc10)
+tree2009.lc11 <- tree(factor(LC11) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2009.lc11)
 # 2010
-tree2010.lc1  <- tree(factor(LC1)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc1)
-tree2010.lc2  <- tree(factor(LC2)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc2)
-tree2010.lc3  <- tree(factor(LC3)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc3)
-tree2010.lc4  <- tree(factor(LC4)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc4)
-tree2010.lc5  <- tree(factor(LC5)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc5)
-tree2010.lc6  <- tree(factor(LC6)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc6)
-tree2010.lc7  <- tree(factor(LC7)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc7)
-tree2010.lc8  <- tree(factor(LC8)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc8)
-tree2010.lc9  <- tree(factor(LC9)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc9)
-tree2010.lc10 <- tree(factor(LC10) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc10)
-tree2010.lc11 <- tree(factor(LC11) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc11)
+tree2010.lc1  <- tree(factor(LC1)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc1)
+tree2010.lc2  <- tree(factor(LC2)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc2)
+tree2010.lc3  <- tree(factor(LC3)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc3)
+tree2010.lc4  <- tree(factor(LC4)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc4)
+tree2010.lc5  <- tree(factor(LC5)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc5)
+tree2010.lc6  <- tree(factor(LC6)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc6)
+tree2010.lc7  <- tree(factor(LC7)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc7)
+tree2010.lc8  <- tree(factor(LC8)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc8)
+tree2010.lc9  <- tree(factor(LC9)  ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc9)
+tree2010.lc10 <- tree(factor(LC10) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc10)
+tree2010.lc11 <- tree(factor(LC11) ~ MeanHH + MeanHV + MeanRAT + SDHH + SDHV + SDRAT + MeanAspect + MeanDEM + MeanSlope + SDAspect + SDDEM + SDSlope + Area + Asymmetry + Compactness + EllipticFit + Length + LengthWidthRatio + RectangularFit + Roundness + Width + GLCMAngHH + GLCMAngHV + GLCMAngRAT + GLCMConHH + GLCMConHV + GLCMConRAT + GLCMCorHH + GLCMCorHV + GLCMCorRAT + GLCMDisHH + GLCMDisHV + GLCMDisRAT + GLCMEntHH + GLCMEntHV + GLCMEntRAT + GLCMHomHH + GLCMHomHV + GLCMHomRAT + GLCMMnHH + GLCMMnHV + GLCMMnRAT + GLCMSDHH + GLCMSDHV + GLCMSDRAT, dat2010.lc11)
 
 # Perform k-fold cross-validation for each classification level of multi-year data
 
