@@ -346,8 +346,8 @@ dat2007$LC10[dat2007$LC9=="CFM"] <- "CFM"
 dat2007$LC10[dat2007$LC9=="CFC"] <- "CFC"
 dat2007$LC10[dat2007$LC9=="CFB"] <- "CFB"
 dat2007$LC10[dat2007$LC9=="FG1"] <- "FG1"
-dat2007$LC10[dat2007$LCCode=="FOFC"] <- "OFC"
-dat2007$LC10[dat2007$LCCode=="FOFM"] <- "OFM"
+dat2007$LC10[dat2007$LCCode=="FFPB"] <- "FPB"
+dat2007$LC10[dat2007$LCCode=="FOFB"] <- "OFB"
 # 2008
 dat2008$LC10 <- "OOO"
 dat2008$LC10[dat2008$LC9=="WTR"] <- "WTR"
@@ -385,8 +385,8 @@ dat2010$LC10[dat2010$LC9=="OFC"] <- "OFC"
 dat2010$LC10[dat2010$LC9=="FPB"] <- "FPB"
 dat2010$LC10[dat2010$LC9=="CFC"] <- "CFC"
 dat2010$LC10[dat2010$LC9=="FG1"] <- "FG1"
-dat2010$LC10[dat2010$LCCode=="FCFM"] <- "CFM"
-dat2010$LC10[dat2010$LCCode=="FOFM"] <- "OFM"
+dat2010$LC10[dat2010$LCCode=="FCFB"] <- "CFB"
+dat2010$LC10[dat2010$LCCode=="FOFB"] <- "OFB"
 
 # Level11: Node 1 Split
 
