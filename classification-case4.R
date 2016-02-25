@@ -359,7 +359,7 @@ dat2008$LC10[dat2008$LC9=="OFC"] <- "OFC"
 dat2008$LC10[dat2008$LC9=="CFC"] <- "CFC"
 dat2008$LC10[dat2008$LC9=="CFM"] <- "CFM"
 dat2008$LC10[dat2008$LC9=="FG1"] <- "FG1"
-dat2008$LC10[dat2008$LCCode=="FCFB"] <- "OFB"
+dat2008$LC10[dat2008$LCCode=="FCFB"] <- "CFB"
 dat2008$LC10[dat2008$LCCode=="FOFB"] <- "OFB"
 # 2009
 dat2009$LC10 <- "OOO"
