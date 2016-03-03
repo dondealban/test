@@ -19,7 +19,7 @@ library(ggplot2)
 # CASE 1: POLARISATION
 
 # Set working directory
-setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/2016.02.19/")
+setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/")
 
 # Read data, define variables, and store data in variables
 raw2007 <- as.matrix(read.csv(file="PALSARwDEM-NLuzon-Clustering-2007-CBS.csv", header=TRUE, sep=",", row.name = 1))
