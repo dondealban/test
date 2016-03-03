@@ -258,16 +258,16 @@ print(cn0810c2)
 print(cn0910c2)
 sink()
 
-# CASE 3: POLARISATION + GEOMETRY
+# CASE 3: POLARISATION + TEXTURE
 
 # Set working directory
 setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/")
 
 # Subset data by selecting variables
-nlz2007c3 <- nlz2007[,c(1:2,4:5,38:42,46:50,54)]
-nlz2008c3 <- nlz2008[,c(1:2,4:5,38:42,46:50,54)]
-nlz2009c3 <- nlz2009[,c(1:2,4:5,38:42,46:50,54)]
-nlz2010c3 <- nlz2010[,c(1:2,4:5,38:42,46:50,54)]
+nlz2007c3 <- nlz2007[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:42,48:50)]
+nlz2008c3 <- nlz2008[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:42,48:50)]
+nlz2009c3 <- nlz2009[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:42,48:50)]
+nlz2010c3 <- nlz2010[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:42,48:50)]
 
 # Transpose matrix elements
 tnlz2007c3 = t(nlz2007c3)
