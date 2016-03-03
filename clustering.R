@@ -7,7 +7,11 @@
 #
 # Script By:      Jose Don T. De Alban
 # Date Created:   22 Jan 2016
+<<<<<<< HEAD
 # Last Modified:  19 Feb 2016 
+=======
+# Last Modified:  03 Mar 2016 
+>>>>>>> revision
 
 # Load the required R libraries
 library(pvclust)
@@ -19,7 +23,11 @@ library(ggplot2)
 # CASE 1: POLARISATION
 
 # Set working directory
+<<<<<<< HEAD
 setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/2016.02.19/")
+=======
+setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/")
+>>>>>>> revision
 
 # Read data, define variables, and store data in variables
 raw2007 <- as.matrix(read.csv(file="PALSARwDEM-NLuzon-Clustering-2007-CBS.csv", header=TRUE, sep=",", row.name = 1))
@@ -51,23 +59,40 @@ clust.nlz2008c1 <- pvclust(tnlz2008c1, method.hclust="average", method.dist="euc
 clust.nlz2009c1 <- pvclust(tnlz2009c1, method.hclust="average", method.dist="euclidean", nboot=1000)
 clust.nlz2010c1 <- pvclust(tnlz2010c1, method.hclust="average", method.dist="euclidean", nboot=1000)
 
+<<<<<<< HEAD
 # Plot dendrograms and save as PNG file
 png("output-dendrogram-2007-case1.png", width=700, height=500)
+=======
+# Plot dendrograms and save as PDF file
+pdf("output-dendrogram-2007-case1.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2007c1 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2007 Case 1")
 clust.nlz2007c1 %>% text
 clust.nlz2007c1 %>% pvrect(alpha=0.95)
 dev.off()
+<<<<<<< HEAD
 png("output-dendrogram-2008-case1.png", width=700, height=500)
+=======
+pdf("output-dendrogram-2008-case1.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2008c1 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2008 Case 1")
 clust.nlz2008c1 %>% text
 clust.nlz2008c1 %>% pvrect(alpha=0.95)
 dev.off()
+<<<<<<< HEAD
 png("output-dendrogram-2009-case1.png", width=700, height=500)
+=======
+pdf("output-dendrogram-2009-case1.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2009c1 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2009 Case 1")
 clust.nlz2009c1 %>% text
 clust.nlz2009c1 %>% pvrect(alpha=0.95)
 dev.off()
+<<<<<<< HEAD
 png("output-dendrogram-2010-case1.png", width=700, height=500)
+=======
+pdf("output-dendrogram-2010-case1.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2010c1 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2010 Case 1")
 clust.nlz2010c1 %>% text
 clust.nlz2010c1 %>% pvrect(alpha=0.95)
@@ -146,7 +171,11 @@ sink()
 # CASE 2: POLARISATION + TOPOGRAPHIC
 
 # Set working directory
+<<<<<<< HEAD
 setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/2016.02.19/")
+=======
+setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/")
+>>>>>>> revision
 
 # Subset data by selecting variables
 nlz2007c2 <- nlz2007[,c(40:45,48:53)]
@@ -166,23 +195,40 @@ clust.nlz2008c2 <- pvclust(tnlz2008c2, method.hclust="average", method.dist="euc
 clust.nlz2009c2 <- pvclust(tnlz2009c2, method.hclust="average", method.dist="euclidean", nboot=1000)
 clust.nlz2010c2 <- pvclust(tnlz2010c2, method.hclust="average", method.dist="euclidean", nboot=1000)
 
+<<<<<<< HEAD
 # Plot dendrograms and save as PNG file
 png("output-dendrogram-2007-case2.png", width=700, height=500)
+=======
+# Plot dendrograms and save as PDF file
+pdf("output-dendrogram-2007-case2.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2007c2 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2007 Case 2")
 clust.nlz2007c2 %>% text
 clust.nlz2007c2 %>% pvrect(alpha=0.95)
 dev.off()
+<<<<<<< HEAD
 png("output-dendrogram-2008-case2.png", width=700, height=500)
+=======
+pdf("output-dendrogram-2008-case2.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2008c2 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2008 Case 2")
 clust.nlz2008c2 %>% text
 clust.nlz2008c2 %>% pvrect(alpha=0.95)
 dev.off()
+<<<<<<< HEAD
 png("output-dendrogram-2009-case2.png", width=700, height=500)
+=======
+pdf("output-dendrogram-2009-case2.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2009c2 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2009 Case 2")
 clust.nlz2009c2 %>% text
 clust.nlz2009c2 %>% pvrect(alpha=0.95)
 dev.off()
+<<<<<<< HEAD
 png("output-dendrogram-2010-case2.png", width=700, height=500)
+=======
+pdf("output-dendrogram-2010-case2.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2010c2 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2010 Case 2")
 clust.nlz2010c2 %>% text
 clust.nlz2010c2 %>% pvrect(alpha=0.95)
@@ -258,6 +304,7 @@ print(cn0810c2)
 print(cn0910c2)
 sink()
 
+<<<<<<< HEAD
 # CASE 3: POLARISATION + GEOMETRY
 
 # Set working directory
@@ -268,6 +315,18 @@ nlz2007c3 <- nlz2007[,c(1:2,4:5,38:42,46:50,54)]
 nlz2008c3 <- nlz2008[,c(1:2,4:5,38:42,46:50,54)]
 nlz2009c3 <- nlz2009[,c(1:2,4:5,38:42,46:50,54)]
 nlz2010c3 <- nlz2010[,c(1:2,4:5,38:42,46:50,54)]
+=======
+# CASE 3: POLARISATION + TEXTURE
+
+# Set working directory
+setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/")
+
+# Subset data by selecting variables
+nlz2007c3 <- nlz2007[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:42,48:50)]
+nlz2008c3 <- nlz2008[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:42,48:50)]
+nlz2009c3 <- nlz2009[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:42,48:50)]
+nlz2010c3 <- nlz2010[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:42,48:50)]
+>>>>>>> revision
 
 # Transpose matrix elements
 tnlz2007c3 = t(nlz2007c3)
@@ -281,23 +340,40 @@ clust.nlz2008c3 <- pvclust(tnlz2008c3, method.hclust="average", method.dist="euc
 clust.nlz2009c3 <- pvclust(tnlz2009c3, method.hclust="average", method.dist="euclidean", nboot=1000)
 clust.nlz2010c3 <- pvclust(tnlz2010c3, method.hclust="average", method.dist="euclidean", nboot=1000)
 
+<<<<<<< HEAD
 # Plot dendrograms and save as PNG file
 png("output-dendrogram-2007-case3.png", width=700, height=500)
+=======
+# Plot dendrograms and save as PDF file
+pdf("output-dendrogram-2007-case3.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2007c3 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2007 Case 3")
 clust.nlz2007c3 %>% text
 clust.nlz2007c3 %>% pvrect(alpha=0.95)
 dev.off()
+<<<<<<< HEAD
 png("output-dendrogram-2008-case3.png", width=700, height=500)
+=======
+pdf("output-dendrogram-2008-case3.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2008c3 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2008 Case 3")
 clust.nlz2008c3 %>% text
 clust.nlz2008c3 %>% pvrect(alpha=0.95)
 dev.off()
+<<<<<<< HEAD
 png("output-dendrogram-2009-case3.png", width=700, height=500)
+=======
+pdf("output-dendrogram-2009-case3.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2009c3 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2009 Case 3")
 clust.nlz2009c3 %>% text
 clust.nlz2009c3 %>% pvrect(alpha=0.95)
 dev.off()
+<<<<<<< HEAD
 png("output-dendrogram-2010-case3.png", width=700, height=500)
+=======
+pdf("output-dendrogram-2010-case3.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2010c3 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2010 Case 3")
 clust.nlz2010c3 %>% text
 clust.nlz2010c3 %>% pvrect(alpha=0.95)
@@ -373,6 +449,7 @@ print(cn0810c3)
 print(cn0910c3)
 sink()
 
+<<<<<<< HEAD
 # CASE 4: POLARISATION + TEXTURE
 
 # Set working directory
@@ -383,6 +460,18 @@ nlz2007c4 <- nlz2007[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:42,48:5
 nlz2008c4 <- nlz2008[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:42,48:50)]
 nlz2009c4 <- nlz2009[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:42,48:50)]
 nlz2010c4 <- nlz2010[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:42,48:50)]
+=======
+# CASE 4: POLARISATION + TOPOGRAPHIC + TEXTURE
+
+# Set working directory
+setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/")
+
+# Subset data by selecting variables
+nlz2007c4 <- nlz2007[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:45,48:53)]
+nlz2008c4 <- nlz2008[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:45,48:53)]
+nlz2009c4 <- nlz2009[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:45,48:53)]
+nlz2010c4 <- nlz2010[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:45,48:53)]
+>>>>>>> revision
 
 # Transpose matrix elements
 tnlz2007c4 = t(nlz2007c4)
@@ -396,23 +485,40 @@ clust.nlz2008c4 <- pvclust(tnlz2008c4, method.hclust="average", method.dist="euc
 clust.nlz2009c4 <- pvclust(tnlz2009c4, method.hclust="average", method.dist="euclidean", nboot=1000)
 clust.nlz2010c4 <- pvclust(tnlz2010c4, method.hclust="average", method.dist="euclidean", nboot=1000)
 
+<<<<<<< HEAD
 # Plot dendrograms and save as PNG file
 png("output-dendrogram-2007-case4.png", width=700, height=500)
+=======
+# Plot dendrograms and save as PDF file
+pdf("output-dendrogram-2007-case4.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2007c4 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2007 Case 4")
 clust.nlz2007c4 %>% text
 clust.nlz2007c4 %>% pvrect(alpha=0.95)
 dev.off()
+<<<<<<< HEAD
 png("output-dendrogram-2008-case4.png", width=700, height=500)
+=======
+pdf("output-dendrogram-2008-case4.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2008c4 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2008 Case 4")
 clust.nlz2008c4 %>% text
 clust.nlz2008c4 %>% pvrect(alpha=0.95)
 dev.off()
+<<<<<<< HEAD
 png("output-dendrogram-2009-case4.png", width=700, height=500)
+=======
+pdf("output-dendrogram-2009-case4.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2009c4 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2009 Case 4")
 clust.nlz2009c4 %>% text
 clust.nlz2009c4 %>% pvrect(alpha=0.95)
 dev.off()
+<<<<<<< HEAD
 png("output-dendrogram-2010-case4.png", width=700, height=500)
+=======
+pdf("output-dendrogram-2010-case4.pdf", width=7, height=5.5)
+>>>>>>> revision
 clust.nlz2010c4 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2010 Case 4")
 clust.nlz2010c4 %>% text
 clust.nlz2010c4 %>% pvrect(alpha=0.95)
@@ -487,6 +593,7 @@ print(cn0809c4)
 print(cn0810c4)
 print(cn0910c4)
 sink()
+<<<<<<< HEAD
 
 # CASE 5: POLARISATION + TOPOGRAPHIC + GEOMETRY
 
@@ -947,3 +1054,5 @@ print(cn0809c8)
 print(cn0810c8)
 print(cn0910c8)
 sink()
+=======
+>>>>>>> revision
