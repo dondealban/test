@@ -51,23 +51,23 @@ clust.nlz2008c1 <- pvclust(tnlz2008c1, method.hclust="average", method.dist="euc
 clust.nlz2009c1 <- pvclust(tnlz2009c1, method.hclust="average", method.dist="euclidean", nboot=1000)
 clust.nlz2010c1 <- pvclust(tnlz2010c1, method.hclust="average", method.dist="euclidean", nboot=1000)
 
-# Plot dendrograms and save as PNG file
-png("output-dendrogram-2007-case1.png", width=700, height=500)
+# Plot dendrograms and save as PDF file
+pdf("output-dendrogram-2007-case1.pdf", width=7, height=5.5)
 clust.nlz2007c1 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2007 Case 1")
 clust.nlz2007c1 %>% text
 clust.nlz2007c1 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2008-case1.png", width=700, height=500)
+pdf("output-dendrogram-2008-case1.pdf", width=7, height=5.5)
 clust.nlz2008c1 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2008 Case 1")
 clust.nlz2008c1 %>% text
 clust.nlz2008c1 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2009-case1.png", width=700, height=500)
+pdf("output-dendrogram-2009-case1.pdf", width=7, height=5.5)
 clust.nlz2009c1 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2009 Case 1")
 clust.nlz2009c1 %>% text
 clust.nlz2009c1 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2010-case1.png", width=700, height=500)
+pdf("output-dendrogram-2010-case1.pdf", width=7, height=5.5)
 clust.nlz2010c1 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2010 Case 1")
 clust.nlz2010c1 %>% text
 clust.nlz2010c1 %>% pvrect(alpha=0.95)
@@ -166,23 +166,23 @@ clust.nlz2008c2 <- pvclust(tnlz2008c2, method.hclust="average", method.dist="euc
 clust.nlz2009c2 <- pvclust(tnlz2009c2, method.hclust="average", method.dist="euclidean", nboot=1000)
 clust.nlz2010c2 <- pvclust(tnlz2010c2, method.hclust="average", method.dist="euclidean", nboot=1000)
 
-# Plot dendrograms and save as PNG file
-png("output-dendrogram-2007-case2.png", width=700, height=500)
+# Plot dendrograms and save as PDF file
+pdf("output-dendrogram-2007-case2.pdf", width=7, height=5.5)
 clust.nlz2007c2 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2007 Case 2")
 clust.nlz2007c2 %>% text
 clust.nlz2007c2 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2008-case2.png", width=700, height=500)
+pdf("output-dendrogram-2008-case2.pdf", width=7, height=5.5)
 clust.nlz2008c2 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2008 Case 2")
 clust.nlz2008c2 %>% text
 clust.nlz2008c2 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2009-case2.png", width=700, height=500)
+pdf("output-dendrogram-2009-case2.pdf", width=7, height=5.5)
 clust.nlz2009c2 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2009 Case 2")
 clust.nlz2009c2 %>% text
 clust.nlz2009c2 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2010-case2.png", width=700, height=500)
+pdf("output-dendrogram-2010-case2.pdf", width=7, height=5.5)
 clust.nlz2010c2 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2010 Case 2")
 clust.nlz2010c2 %>% text
 clust.nlz2010c2 %>% pvrect(alpha=0.95)
@@ -281,23 +281,23 @@ clust.nlz2008c3 <- pvclust(tnlz2008c3, method.hclust="average", method.dist="euc
 clust.nlz2009c3 <- pvclust(tnlz2009c3, method.hclust="average", method.dist="euclidean", nboot=1000)
 clust.nlz2010c3 <- pvclust(tnlz2010c3, method.hclust="average", method.dist="euclidean", nboot=1000)
 
-# Plot dendrograms and save as PNG file
-png("output-dendrogram-2007-case3.png", width=700, height=500)
+# Plot dendrograms and save as PDF file
+pdf("output-dendrogram-2007-case3.pdf", width=7, height=5.5)
 clust.nlz2007c3 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2007 Case 3")
 clust.nlz2007c3 %>% text
 clust.nlz2007c3 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2008-case3.png", width=700, height=500)
+pdf("output-dendrogram-2008-case3.pdf", width=7, height=5.5)
 clust.nlz2008c3 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2008 Case 3")
 clust.nlz2008c3 %>% text
 clust.nlz2008c3 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2009-case3.png", width=700, height=500)
+pdf("output-dendrogram-2009-case3.pdf", width=7, height=5.5)
 clust.nlz2009c3 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2009 Case 3")
 clust.nlz2009c3 %>% text
 clust.nlz2009c3 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2010-case3.png", width=700, height=500)
+pdf("output-dendrogram-2010-case3.pdf", width=7, height=5.5)
 clust.nlz2010c3 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2010 Case 3")
 clust.nlz2010c3 %>% text
 clust.nlz2010c3 %>% pvrect(alpha=0.95)
@@ -396,23 +396,23 @@ clust.nlz2008c4 <- pvclust(tnlz2008c4, method.hclust="average", method.dist="euc
 clust.nlz2009c4 <- pvclust(tnlz2009c4, method.hclust="average", method.dist="euclidean", nboot=1000)
 clust.nlz2010c4 <- pvclust(tnlz2010c4, method.hclust="average", method.dist="euclidean", nboot=1000)
 
-# Plot dendrograms and save as PNG file
-png("output-dendrogram-2007-case4.png", width=700, height=500)
+# Plot dendrograms and save as PDF file
+pdf("output-dendrogram-2007-case4.pdf", width=7, height=5.5)
 clust.nlz2007c4 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2007 Case 4")
 clust.nlz2007c4 %>% text
 clust.nlz2007c4 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2008-case4.png", width=700, height=500)
+pdf("output-dendrogram-2008-case4.pdf", width=7, height=5.5)
 clust.nlz2008c4 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2008 Case 4")
 clust.nlz2008c4 %>% text
 clust.nlz2008c4 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2009-case4.png", width=700, height=500)
+pdf("output-dendrogram-2009-case4.pdf", width=7, height=5.5)
 clust.nlz2009c4 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2009 Case 4")
 clust.nlz2009c4 %>% text
 clust.nlz2009c4 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2010-case4.png", width=700, height=500)
+pdf("output-dendrogram-2010-case4.pdf", width=7, height=5.5)
 clust.nlz2010c4 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2010 Case 4")
 clust.nlz2010c4 %>% text
 clust.nlz2010c4 %>% pvrect(alpha=0.95)
@@ -511,23 +511,23 @@ clust.nlz2008c5 <- pvclust(tnlz2008c5, method.hclust="average", method.dist="euc
 clust.nlz2009c5 <- pvclust(tnlz2009c5, method.hclust="average", method.dist="euclidean", nboot=1000)
 clust.nlz2010c5 <- pvclust(tnlz2010c5, method.hclust="average", method.dist="euclidean", nboot=1000)
 
-# Plot dendrograms and save as PNG file
-png("output-dendrogram-2007-case5.png", width=700, height=500)
+# Plot dendrograms and save as PDF file
+pdf("output-dendrogram-2007-case5.pdf", width=7, height=5.5)
 clust.nlz2007c5 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2007 Case 5")
 clust.nlz2007c5 %>% text
 clust.nlz2007c5 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2008-case5.png", width=700, height=500)
+pdf("output-dendrogram-2008-case5.pdf", width=7, height=5.5)
 clust.nlz2008c5 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2008 Case 5")
 clust.nlz2008c5 %>% text
 clust.nlz2008c5 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2009-case5.png", width=700, height=500)
+pdf("output-dendrogram-2009-case5.pdf", width=7, height=5.5)
 clust.nlz2009c5 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2009 Case 5")
 clust.nlz2009c5 %>% text
 clust.nlz2009c5 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2010-case5.png", width=700, height=500)
+pdf("output-dendrogram-2010-case5.pdf", width=7, height=5.5)
 clust.nlz2010c5 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2010 Case 5")
 clust.nlz2010c5 %>% text
 clust.nlz2010c5 %>% pvrect(alpha=0.95)
@@ -626,23 +626,23 @@ clust.nlz2008c6 <- pvclust(tnlz2008c6, method.hclust="average", method.dist="euc
 clust.nlz2009c6 <- pvclust(tnlz2009c6, method.hclust="average", method.dist="euclidean", nboot=1000)
 clust.nlz2010c6 <- pvclust(tnlz2010c6, method.hclust="average", method.dist="euclidean", nboot=1000)
 
-# Plot dendrograms and save as PNG file
-png("output-dendrogram-2007-case6.png", width=700, height=500)
+# Plot dendrograms and save as PDF file
+pdf("output-dendrogram-2007-case6.pdf", width=7, height=5.5)
 clust.nlz2007c6 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2007 Case 6")
 clust.nlz2007c6 %>% text
 clust.nlz2007c6 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2008-case6.png", width=700, height=500)
+pdf("output-dendrogram-2008-case6.pdf", width=7, height=5.5)
 clust.nlz2008c6 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2008 Case 6")
 clust.nlz2008c6 %>% text
 clust.nlz2008c6 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2009-case6.png", width=700, height=500)
+pdf("output-dendrogram-2009-case6.pdf", width=7, height=5.5)
 clust.nlz2009c6 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2009 Case 6")
 clust.nlz2009c6 %>% text
 clust.nlz2009c6 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2010-case6.png", width=700, height=500)
+pdf("output-dendrogram-2010-case6.pdf", width=7, height=5.5)
 clust.nlz2010c6 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2010 Case 6")
 clust.nlz2010c6 %>% text
 clust.nlz2010c6 %>% pvrect(alpha=0.95)
@@ -741,23 +741,23 @@ clust.nlz2008c7 <- pvclust(tnlz2008c7, method.hclust="average", method.dist="euc
 clust.nlz2009c7 <- pvclust(tnlz2009c7, method.hclust="average", method.dist="euclidean", nboot=1000)
 clust.nlz2010c7 <- pvclust(tnlz2010c7, method.hclust="average", method.dist="euclidean", nboot=1000)
 
-# Plot dendrograms and save as PNG file
-png("output-dendrogram-2007-case7.png", width=700, height=500)
+# Plot dendrograms and save as PDF file
+pdf("output-dendrogram-2007-case7.pdf", width=7, height=5.5)
 clust.nlz2007c7 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2007 Case 7")
 clust.nlz2007c7 %>% text
 clust.nlz2007c7 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2008-case7.png", width=700, height=500)
+pdf("output-dendrogram-2008-case7.pdf", width=7, height=5.5)
 clust.nlz2008c7 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2008 Case 7")
 clust.nlz2008c7 %>% text
 clust.nlz2008c7 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2009-case7.png", width=700, height=500)
+pdf("output-dendrogram-2009-case7.pdf", width=7, height=5.5)
 clust.nlz2009c7 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2009 Case 7")
 clust.nlz2009c7 %>% text
 clust.nlz2009c7 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2010-case7.png", width=700, height=500)
+pdf("output-dendrogram-2010-case7.pdf", width=7, height=5.5)
 clust.nlz2010c7 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2010 Case 7")
 clust.nlz2010c7 %>% text
 clust.nlz2010c7 %>% pvrect(alpha=0.95)
@@ -856,23 +856,23 @@ clust.nlz2008c8 <- pvclust(tnlz2008c8, method.hclust="average", method.dist="euc
 clust.nlz2009c8 <- pvclust(tnlz2009c8, method.hclust="average", method.dist="euclidean", nboot=1000)
 clust.nlz2010c8 <- pvclust(tnlz2010c8, method.hclust="average", method.dist="euclidean", nboot=1000)
 
-# Plot dendrograms and save as PNG file
-png("output-dendrogram-2007-case8.png", width=700, height=500)
+# Plot dendrograms and save as PDF file
+pdf("output-dendrogram-2007-case8.pdf", width=7, height=5.5)
 clust.nlz2007c8 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2007 Case 8")
 clust.nlz2007c8 %>% text
 clust.nlz2007c8 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2008-case8.png", width=700, height=500)
+pdf("output-dendrogram-2008-case8.pdf", width=7, height=5.5)
 clust.nlz2008c8 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2008 Case 8")
 clust.nlz2008c8 %>% text
 clust.nlz2008c8 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2009-case8.png", width=700, height=500)
+pdf("output-dendrogram-2009-case8.pdf", width=7, height=5.5)
 clust.nlz2009c8 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2009 Case 8")
 clust.nlz2009c8 %>% text
 clust.nlz2009c8 %>% pvrect(alpha=0.95)
 dev.off()
-png("output-dendrogram-2010-case8.png", width=700, height=500)
+pdf("output-dendrogram-2010-case8.pdf", width=7, height=5.5)
 clust.nlz2010c8 %>% as.dendrogram %>% hang.dendrogram %>% plot(main = "Dendrogram: 2010 Case 8")
 clust.nlz2010c8 %>% text
 clust.nlz2010c8 %>% pvrect(alpha=0.95)
