@@ -146,7 +146,7 @@ sink()
 # CASE 2: POLARISATION + TOPOGRAPHIC
 
 # Set working directory
-setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/2016.02.19/")
+setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/")
 
 # Subset data by selecting variables
 nlz2007c2 <- nlz2007[,c(40:45,48:53)]
@@ -261,7 +261,7 @@ sink()
 # CASE 3: POLARISATION + GEOMETRY
 
 # Set working directory
-setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/2016.02.19/")
+setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/")
 
 # Subset data by selecting variables
 nlz2007c3 <- nlz2007[,c(1:2,4:5,38:42,46:50,54)]
@@ -376,7 +376,7 @@ sink()
 # CASE 4: POLARISATION + TEXTURE
 
 # Set working directory
-setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/2016.02.19/")
+setwd("/Users/dondealban/Image Processing/Thesis/R/3 clustering 2016/")
 
 # Subset data by selecting variables
 nlz2007c4 <- nlz2007[,c(7:9,11:13,15:17,19:21,23:25,27:29,31:33,35:37,40:42,48:50)]
