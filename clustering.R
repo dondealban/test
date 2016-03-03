@@ -7,7 +7,7 @@
 #
 # Script By:      Jose Don T. De Alban
 # Date Created:   22 Jan 2016
-# Last Modified:  19 Feb 2016 
+# Last Modified:  03 Mar 2016 
 
 # Load the required R libraries
 library(pvclust)
